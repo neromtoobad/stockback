@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* Palette: #0A0212 ink, #6569D2 periwinkle, #5ECBA1 mint, on a soft lavender gradient. */
+:root {
+  --paper: #eef0fb;
+  --card: rgba(255, 255, 255, 0.62);
+  --card-solid: #f7f8fe;
+  --ink: #0a0212;
+  --muted: #6e6c8a;
+  --line: rgba(101, 105, 210, 0.16);
+  --accent: #6569d2;
+  --accent-deep: #5357c4;
+  --accent-ink: #ffffff;
+  --mint: #5ecba1;
+  --gain: #2fae80;
+  --warn: #e0577b;
+  --chip: rgba(101, 105, 210, 0.09);
+  --backdrop: #979ceb;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-card-solid: var(--card-solid);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-ink: var(--accent-ink);
+  --color-mint: var(--mint);
+  --color-gain: var(--gain);
+  --color-warn: var(--warn);
+  --color-chip: var(--chip);
+  --font-sans: var(--font-urbanist);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  background: var(--backdrop);
+}
+body {
+  color: var(--ink);
+  font-family: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #b8c2f7 0%, transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, #c9b6f0 0%, transparent 55%),
+    var(--backdrop);
+  min-height: 100vh;
+}
+
+/* The app sits in a rounded "window" like a desktop terminal on the lavender backdrop. */
+.app-frame {
+  background:
+    radial-gradient(900px 500px at 0% 0%, #dfe7fd 0%, transparent 60%),
+    radial-gradient(800px 600px at 100% 0%, #efe3fb 0%, transparent 55%),
+    radial-gradient(700px 500px at 30% 100%, #d9f1f1 0%, transparent 60%),
+    #e9ebfa;
+}
+
+.glass {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 18px 40px -24px rgba(56, 52, 140, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.tile {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px -18px rgba(56, 52, 140, 0.35);
+}
+.violet {
+  background: linear-gradient(160deg, #7a7ee0 0%, #6569d2 55%, #5a5ec8 100%);
+  box-shadow: 0 22px 40px -22px rgba(60, 62, 170, 0.7);
+}
+
+@keyframes scan {
+  0% { transform: translateY(-10%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(1000%); opacity: 0; }
+}
+.scanline { animation: scan 2.2s ease-in-out infinite; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.35s ease-out both; }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee { animation: marquee 60s linear infinite; }
+.marquee:hover { animation-play-state: paused; }

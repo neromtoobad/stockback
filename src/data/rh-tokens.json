@@ -1,0 +1,1367 @@
+[
+{
+"symbol": "AAOI",
+"name": "Applied Optoelectronics",
+"address": "0x521Cf887E6531c6F667b5BC4D896E5d9bfE8EB2E",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x521cf887e6531c6f667b5bc4d896e5d9bfe8eb2e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AAPL",
+"name": "Apple",
+"address": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xaf3d76f1834a1d425780943c99ea8a608f8a93f9.png",
+"multiplier": "1.000566080061092436"
+},
+{
+"symbol": "ABCL",
+"name": "Abcellera Biologics",
+"address": "0x3139D77Ace0cbAA5bDfD38bD1F1911a794AF0B0e",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x3139d77ace0cbaa5bdfd38bd1f1911a794af0b0e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ADBE",
+"name": "Adobe",
+"address": "0x232B8ed6377BE97813853B0Ac104c4Cda8378d1B",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x232b8ed6377be97813853b0ac104c4cda8378d1b.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AEHR",
+"name": "Aehr",
+"address": "0x5F604fBA1162193A4388A5DFa56F556f3E133cC2",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x5f604fba1162193a4388a5dfa56f556f3e133cc2.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AEIS",
+"name": "Advanced Energy",
+"address": "0xfAf9cb261B5FCC1f404Bb10CD39C5c6C1974E612",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xfaf9cb261b5fcc1f404bb10cd39c5c6c1974e612.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ALAB",
+"name": "Astera Labs, Inc.",
+"address": "0x748c32c3ca24eDf31ea597Db1F3d330a7a6DA3Dc",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x748c32c3ca24edf31ea597db1f3d330a7a6da3dc.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AMAT",
+"name": "Applied Materials",
+"address": "0x36046893810a7E7fCE501229d57dc3FC8c8716d0",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x36046893810a7e7fce501229d57dc3fc8c8716d0.png",
+"multiplier": "1.000044656302636618"
+},
+{
+"symbol": "AMBA",
+"name": "Ambarella",
+"address": "0x99D9D8663545151603863C5AcbD6FC3218899009",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x99d9d8663545151603863c5acbd6fc3218899009.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AMC",
+"name": "AMC Entertainment",
+"address": "0x05a3d1Cd21d0C88145E82600E62e7E496e0F222B",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x05a3d1cd21d0c88145e82600e62e7e496e0f222b.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AMD",
+"name": "AMD",
+"address": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x86923f96303d656e4aa86d9d42d1e57ad2023fdc.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AMKR",
+"name": "Amkor Technology",
+"address": "0xDd356AA38F40A7b7076755aC854B6FBb1F0D305B",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xdd356aa38f40a7b7076755ac854b6fbb1f0d305b.png",
+"multiplier": "1.000866850964062008"
+},
+{
+"symbol": "AMZN",
+"name": "Amazon",
+"address": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x12f190a9f9d7d37a250758b26824b97ce941bf54.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ANET",
+"name": "Arista",
+"address": "0x28bABD556b60E53663B8615036479a29c2CDd1Bf",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x28babd556b60e53663b8615036479a29c2cdd1bf.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "APLD",
+"name": "Applied Digital",
+"address": "0xb8DBf92F9741c9ac1c32115E78581f23509916FD",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb8dbf92f9741c9ac1c32115e78581f23509916fd.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "APP",
+"name": "AppLovin",
+"address": "0xA249BAF1063Af884807C1E1400AEf7784836917E",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xa249baf1063af884807c1e1400aef7784836917e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ASML",
+"name": "ASML Holding NV",
+"address": "0x47F93d52cBeC7C6D2CfC080e154002370a60dAEA",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x47f93d52cbec7c6d2cfc080e154002370a60daea.png",
+"multiplier": "1.000101323251417769"
+},
+{
+"symbol": "ASTS",
+"name": "AST SpaceMobile",
+"address": "0x1AF6446f07eb1d97c546AFC8c9544cBDF3AD5137",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x1af6446f07eb1d97c546afc8c9544cbdf3ad5137.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AUR",
+"name": "Aurora Innovation",
+"address": "0x373C06c4f7BDe527D7Dae4BA169E42b55E393CeD",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x373c06c4f7bde527d7dae4ba169e42b55e393ced.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AVAV",
+"name": "AeroVironment",
+"address": "0xF6290b5e7C26502e2dA514C31509849718EA76A5",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf6290b5e7c26502e2da514c31509849718ea76a5.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AVGO",
+"name": "Broadcom",
+"address": "0x156E175DD063a8cE274C50654eF40e0032b3fbcF",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x156e175dd063a8ce274c50654ef40e0032b3fbcf.png",
+"multiplier": "1.001257318662278132"
+},
+{
+"symbol": "AXON",
+"name": "Axon",
+"address": "0xC27dBD474aF5181c5A8777903690D8D262D12648",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc27dbd474af5181c5a8777903690d8d262d12648.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "AXTI",
+"name": "AXT",
+"address": "0x141eEa040c2250eEc0314e336975e81f85f6585e",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x141eea040c2250eec0314e336975e81f85f6585e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "BA",
+"name": "Boeing",
+"address": "0x4D21483a44Bf67a86b77E3dA301411880797D452",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x4d21483a44bf67a86b77e3da301411880797d452.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "BABA",
+"name": "Alibaba",
+"address": "0xad25Ac6C84D497db898fa1E8387bf6Af3532a1c4",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xad25ac6c84d497db898fa1e8387bf6af3532a1c4.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "BB",
+"name": "Blackberry",
+"address": "0x48E39E56aCdbA37b09020C0b734A613C9a2f100A",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x48e39e56acdba37b09020c0b734a613c9a2f100a.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "BE",
+"name": "Bloom Energy",
+"address": "0x822CC93fFD030293E9842c30BBD678F530701867",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x822cc93ffd030293e9842c30bbd678f530701867.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "BND",
+"name": "Vanguard Total Bond Market ETF",
+"address": "0x2F62fC9fAbb470C690f141c28340eD832bB27020",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x2f62fc9fabb470c690f141c28340ed832bb27020.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "BULL",
+"name": "Webull",
+"address": "0xceF9027c7d6985b85f0BA431125073529A947A68",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xcef9027c7d6985b85f0ba431125073529a947a68.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CBRS",
+"name": "Cerebras Systems",
+"address": "0x5c90450Bbb4273D7b2f17CF6917AEB237A569679",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x5c90450bbb4273d7b2f17cf6917aeb237a569679.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CCL",
+"name": "Carnival Corporation",
+"address": "0x9651342CeA770aE9a2969Ba2A52611523146aef9",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x9651342cea770ae9a2969ba2a52611523146aef9.png",
+"multiplier": "1.021486444855206408"
+},
+{
+"symbol": "CEG",
+"name": "Constellation Energy",
+"address": "0xaE517A2903E68bd929Dfd15be875F8369D53e94a",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xae517a2903e68bd929dfd15be875f8369d53e94a.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CELH",
+"name": "Celsius",
+"address": "0x8cF07C5A878945185d327aAa6e33FAa95F95e7bF",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x8cf07c5a878945185d327aaa6e33faa95f95e7bf.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CIEN",
+"name": "Ciena",
+"address": "0x44f6D488021f8233B9416294d1FE9b1fEe28382d",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x44f6d488021f8233b9416294d1fe9b1fee28382d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CLOV",
+"name": "Clover Health Investments",
+"address": "0x62200915e7DEab1eC7f79fb246daDbB80eACdDd0",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x62200915e7deab1ec7f79fb246dadbb80eacddd0.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CLS",
+"name": "Celestica",
+"address": "0xBf449977089c718C004a66C554B26B94ef3Ad4De",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xbf449977089c718c004a66c554b26b94ef3ad4de.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CLSK",
+"name": "CleanSpark",
+"address": "0xcBB95BBF36099d34dA091dc6Fa6F49EfA257Cee3",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xcbb95bbf36099d34da091dc6fa6f49efa257cee3.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "COHR",
+"name": "Coherent",
+"address": "0x92F9F459F1a9a5AD266b182BE7Bffd1C6c666894",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x92f9f459f1a9a5ad266b182be7bffd1c6c666894.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "COIN",
+"name": "Coinbase",
+"address": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x6330d8c3178a418788df01a47479c0ce7ccf450b.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "COST",
+"name": "Costco",
+"address": "0x4EA005168D7F09a7A0Ba9D1DEf21a479950E44C2",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x4ea005168d7f09a7a0ba9d1def21a479950e44c2.png",
+"multiplier": "1.000612040296259656"
+},
+{
+"symbol": "CRCL",
+"name": "Circle Internet Group",
+"address": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xdf0992e440dd0be65bd8439b609d6d4366bf1cb5.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CRDO",
+"name": "Credo Technology Group",
+"address": "0x4D67253bc223e6b0e104F1084c1fb2b669dDC41b",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x4d67253bc223e6b0e104f1084c1fb2b669ddc41b.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CRM",
+"name": "Salesforce",
+"address": "0xd95B44124e475743a7589e68F3D74008A5536D44",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xd95b44124e475743a7589e68f3d74008a5536d44.png",
+"multiplier": "1.001148322800714293"
+},
+{
+"symbol": "CRWD",
+"name": "CrowdStrike Holdings",
+"address": "0xea72Ecca2d0f6bFA1394DBBCff85b52CD4233931",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xea72ecca2d0f6bfa1394dbbcff85b52cd4233931.png",
+"multiplier": "4.000000000000000000"
+},
+{
+"symbol": "CRWV",
+"name": "CoreWeave",
+"address": "0x5f10A1C971B69e47e059e1dC91901B59b3fB49C3",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x5f10a1c971b69e47e059e1dc91901b59b3fb49c3.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CSCO",
+"name": "Cisco Systems",
+"address": "0xF543967EEBB6f1917992eF0E68De63ab07a5a0dA",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf543967eebb6f1917992ef0e68de63ab07a5a0da.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CTSH",
+"name": "Cognizant",
+"address": "0x63D5a3b6939a33f1e75d8Bcd85759858239600DB",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x63d5a3b6939a33f1e75d8bcd85759858239600db.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "CVNA",
+"name": "Carvana",
+"address": "0xa4f319104089FE321dc8093C6E707d4fE190A988",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xa4f319104089fe321dc8093c6e707d4fe190a988.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "DDOG",
+"name": "Datadog",
+"address": "0x27c99fBde9D0d2AA4f4Bfb4943f237843DdF6958",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x27c99fbde9d0d2aa4f4bfb4943f237843ddf6958.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "DELL",
+"name": "Dell",
+"address": "0x941AE714EC6D8130c7B75d67160Ca08f1e7d11Dd",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x941ae714ec6d8130c7b75d67160ca08f1e7d11dd.png",
+"multiplier": "1.000063708620124549"
+},
+{
+"symbol": "DJT",
+"name": "Trump Media & Technology Group",
+"address": "0x1D11f0496982706C5e14A514D4E79F2e6BdE4516",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x1d11f0496982706c5e14a514d4e79f2e6bde4516.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "DOCN",
+"name": "DigitalOcean",
+"address": "0xc02f12B9fe9E707079EC0d546f3050d3F6C1F8bD",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc02f12b9fe9e707079ec0d546f3050d3f6c1f8bd.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ELF",
+"name": "e.l.f. Beauty",
+"address": "0x39EC44Bee4F6A116c6F9B8De566848a985C53C60",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x39ec44bee4f6a116c6f9b8de566848a985c53c60.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "EWT",
+"name": "iShares MSCI Taiwan Capped ETF",
+"address": "0x1c690498150252222C275A5CEd69d3A6b1f52D5E",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x1c690498150252222c275a5ced69d3a6b1f52d5e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "EWY",
+"name": "iShares MSCI South Korea fund",
+"address": "0x7f0aBeF0C07280F82c6a08ead09dEd6BAE2C13Fc",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x7f0abef0c07280f82c6a08ead09ded6bae2c13fc.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "F",
+"name": "Ford Motor",
+"address": "0x25C288E6D899b9BC30160965aD9644c67e73bE0C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x25c288e6d899b9bc30160965ad9644c67e73be0c.png",
+"multiplier": "1.000145502866134027"
+},
+{
+"symbol": "FICO",
+"name": "Fair Isaac",
+"address": "0xa48F22A46C0F1C46CA7D111CB6c137c271987180",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xa48f22a46c0f1c46ca7d111cb6c137c271987180.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FIG",
+"name": "Figma",
+"address": "0x41F4267525a8AFf329540eF24fD83d9044758B33",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x41f4267525a8aff329540ef24fd83d9044758b33.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FISV",
+"name": "Fiserv",
+"address": "0x9ECe29A4A2397C0a35fb5fA8EE2b9509130a98cc",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x9ece29a4a2397c0a35fb5fa8ee2b9509130a98cc.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FIX",
+"name": "Comfort Systems",
+"address": "0x93Dbb1d2Dc5D63F4abACFF30485273f538Df68Ac",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x93dbb1d2dc5d63f4abacff30485273f538df68ac.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FLNC",
+"name": "Fluence Energy",
+"address": "0x282e87451E10fA6679BC7D76C69BE44cD3fC777C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x282e87451e10fa6679bc7d76c69be44cd3fc777c.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FLY",
+"name": "Firefly Aerospace Inc.",
+"address": "0x03BC731Ffb162cdd7B98D3C6542bFC291126075d",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x03bc731ffb162cdd7b98d3c6542bfc291126075d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FTNT",
+"name": "Fortinet",
+"address": "0x3FB8976980d486084b2eb4a404BD12e72823958f",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x3fb8976980d486084b2eb4a404bd12e72823958f.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "FUTU",
+"name": "Futu Holdings",
+"address": "0xeB30663bDFf0622Ef4e4E5cBb4E975F19f33f51D",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xeb30663bdff0622ef4e4e5cbb4e975f19f33f51d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GE",
+"name": "General Electric",
+"address": "0x63b814DDBd6BF339f25Fed8c36158a008D5B373e",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x63b814ddbd6bf339f25fed8c36158a008d5b373e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GEV",
+"name": "GE Vernova",
+"address": "0x94B8AAE43A1cCc08Aa64B7D1F29b4D920aF4a0C9",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x94b8aae43a1ccc08aa64b7d1f29b4d920af4a0c9.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GLD",
+"name": "SPDR Gold Trust",
+"address": "0xC9a981FEE1F9DEc688bb123ccDeCc63D0deBFC4e",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc9a981fee1f9dec688bb123ccdecc63d0debfc4e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GLW",
+"name": "Corning",
+"address": "0x7c04E6A3368F2A1DE3874f0e80d2e0A1a9915da6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x7c04e6a3368f2a1de3874f0e80d2e0a1a9915da6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GLXY",
+"name": "Galaxy Digital Inc.",
+"address": "0x2D427692E928fa156ec22acfaBaFA0447C5805B7",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x2d427692e928fa156ec22acfabafa0447c5805b7.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GME",
+"name": "GameStop",
+"address": "0x1b0E319c6A659F002271B69dB8A7df2F911c153E",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x1b0e319c6a659f002271b69db8a7df2f911c153e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "GOOGL",
+"name": "Alphabet Class A",
+"address": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3.png",
+"multiplier": "1.000193924414112587"
+},
+{
+"symbol": "HII",
+"name": "Huntington Ingalls",
+"address": "0xEB61c0Ed490A367d4E3631cCf8a74B3bfc7E775D",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xeb61c0ed490a367d4e3631ccf8a74b3bfc7e775d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "HIMS",
+"name": "Hims & Hers Health",
+"address": "0xCceE82fE024c36fA15E1005edE3E9e4787e23D09",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xccee82fe024c36fa15e1005ede3e9e4787e23d09.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "HPE",
+"name": "HP Enterprise",
+"address": "0x59dd09d4900C2E4B5F75b7c0d4E6796fcc234Cb1",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x59dd09d4900c2e4b5f75b7c0d4e6796fcc234cb1.png",
+"multiplier": "1.001716957939304938"
+},
+{
+"symbol": "HWM",
+"name": "Howmet Aerospace",
+"address": "0xAEa445c5F3DB1a462998ccC422A875A361ee5d99",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xaea445c5f3db1a462998ccc422a875a361ee5d99.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "IBM",
+"name": "IBM",
+"address": "0x980dcf6766FA79f5Cf0c4AAdb3ab477ff15a9619",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x980dcf6766fa79f5cf0c4aadb3ab477ff15a9619.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "IBRX",
+"name": "ImmunityBio,",
+"address": "0x7c148F74ac7445D1F28366b7FcDC6792a9Fcd0Cf",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x7c148f74ac7445d1f28366b7fcdc6792a9fcd0cf.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "INDA",
+"name": "iShares MSCI India ETF",
+"address": "0xACEF2e09adb47aD6aBeBAD9fF06689E60615C2B6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xacef2e09adb47ad6abebad9ff06689e60615c2b6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "INFQ",
+"name": "Infleqtion",
+"address": "0xB853bC83a753342a4f8320ea680b4B1E84118D21",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb853bc83a753342a4f8320ea680b4b1e84118d21.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "INOD",
+"name": "Innodata",
+"address": "0xf1953DAB6FaD537488d5A022361FfAa8B4c95eC6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf1953dab6fad537488d5a022361ffaa8b4c95ec6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "INTC",
+"name": "Intel",
+"address": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc72b96e0e48ecd4dc75e1e45396e26300bc39681.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "INTU",
+"name": "Intuit",
+"address": "0x56d23beE5f41A7120170b0c603Dae30128e460e9",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x56d23bee5f41a7120170b0c603dae30128e460e9.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "IONQ",
+"name": "IonQ",
+"address": "0x558378E000D634A36593E338eBacdd6207640EfE",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x558378e000d634a36593e338ebacdd6207640efe.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "IREN",
+"name": "IREN Limited",
+"address": "0xF0AB0c93bE6F41369d302e55db1A96b3c430212D",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf0ab0c93be6f41369d302e55db1a96b3c430212d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "JBL",
+"name": "Jabil Inc.",
+"address": "0xEAf2512dFC1bEAc608F8794B3793CD4E02894Aa6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xeaf2512dfc1beac608f8794b3793cd4e02894aa6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "JNJ",
+"name": "Johnson & Johnson",
+"address": "0x03DfbBE0AC4E7bCDaFd08eD41A400326B77D8c80",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x03dfbbe0ac4e7bcdafd08ed41a400326b77d8c80.png",
+"multiplier": "1.000021490286701962"
+},
+{
+"symbol": "JOBY",
+"name": "Joby Aviation",
+"address": "0xb334C5cE741B80B5B671F47F5C269Cb193fe8E24",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb334c5ce741b80b5b671f47f5c269cb193fe8e24.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "KLAC",
+"name": "KLA",
+"address": "0x96b933C74eCB4A0926b9210cef7b743EF46be2E9",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x96b933c74ecb4a0926b9210cef7b743ef46be2e9.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "KSS",
+"name": "Kohls Corporation",
+"address": "0x12e3c047bf9AeCAF9dDC98c05C31BFD1dd043993",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x12e3c047bf9aecaf9ddc98c05c31bfd1dd043993.png",
+"multiplier": "1.004610068732316661"
+},
+{
+"symbol": "KTOS",
+"name": "Kratos Defense & Security Solutions",
+"address": "0x7FD06a4d81cCfA3F351394E144d5191874C31313",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x7fd06a4d81ccfa3f351394e144d5191874c31313.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "LHX",
+"name": "L3Harris",
+"address": "0x48d60243c66437c6ac3c2495Be94747aEd5Dfe25",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x48d60243c66437c6ac3c2495be94747aed5dfe25.png",
+"multiplier": "1.004922488323561562"
+},
+{
+"symbol": "LITE",
+"name": "Lumentum",
+"address": "0x8eF20885F94e3D9bc7eB3080279188Bd5ED7c08C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x8ef20885f94e3d9bc7eb3080279188bd5ed7c08c.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "LLY",
+"name": "Eli Lilly",
+"address": "0x8005d266423c7ea827372c9c864491e5786600ea",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x8005d266423c7ea827372c9c864491e5786600ea.png",
+"multiplier": "1.000002288774375687"
+},
+{
+"symbol": "LMT",
+"name": "Lockheed",
+"address": "0x329fcACEb9AD6F9580DD5F643fed0646900D043c",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x329fcaceb9ad6f9580dd5f643fed0646900d043c.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "LRCX",
+"name": "Lam Research Corp",
+"address": "0x57b0030166DB0C31690d1A5aA167e2e26e2C29a4",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x57b0030166db0c31690d1a5aa167e2e26e2c29a4.png",
+"multiplier": "1.000732562938505984"
+},
+{
+"symbol": "LULU",
+"name": "Lululemon",
+"address": "0x4e62068525Ab11FE768e29dfD00ef909B9803016",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x4e62068525ab11fe768e29dfd00ef909b9803016.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "LUNR",
+"name": "Intuitive Machines",
+"address": "0xa5D4968421bA94814Be3B136b15cf422101aC1a3",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xa5d4968421ba94814be3b136b15cf422101ac1a3.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MDB",
+"name": "MongoDB",
+"address": "0xDdf2266b79abf0B48898959B0ed6E6adf512be74",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xddf2266b79abf0b48898959b0ed6e6adf512be74.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "META",
+"name": "Meta Platforms",
+"address": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc0d6457c16cc70d6790dd43521c899c87ce02f35.png",
+"multiplier": "1.000541459879451635"
+},
+{
+"symbol": "MOD",
+"name": "Modine",
+"address": "0xc6Cbad1016b38B797610c25E1dc7D95988B1f362",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc6cbad1016b38b797610c25e1dc7d95988b1f362.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MPWR",
+"name": "Monolithic Power Systems",
+"address": "0x52D50D0280AD1054b43f052bD70a49a212A1b128",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x52d50d0280ad1054b43f052bd70a49a212a1b128.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MRNA",
+"name": "Moderna",
+"address": "0x43B07D15cE533bEc5476d70C22a78a1B2B662155",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x43b07d15ce533bec5476d70c22a78a1b2b662155.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MRVL",
+"name": "Marvell Technology",
+"address": "0x62fd0668e10D8B72339BE2DCF7643001688ff13B",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x62fd0668e10d8b72339be2dcf7643001688ff13b.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MSFT",
+"name": "Microsoft",
+"address": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xe93237c50d904957cf27e7b1133b510c669c2e74.png",
+"multiplier": "1.000412952576205964"
+},
+{
+"symbol": "MSTR",
+"name": "Strategy Inc.",
+"address": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xec262a75e413fafd0df80480274532c79d42da09.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MTSI",
+"name": "MACOM",
+"address": "0xC93f4d80e268AB922e871bd169156C3CC41894e6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc93f4d80e268ab922e871bd169156c3cc41894e6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "MU",
+"name": "Micron Technology",
+"address": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xff080c8ce2e5feadaca0da81314ae59d232d4afd.png",
+"multiplier": "1.000074823219171086"
+},
+{
+"symbol": "MXL",
+"name": "MaxLinear",
+"address": "0x48961813349333209994750ffA89b3c5C22eC969",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x48961813349333209994750ffa89b3c5c22ec969.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NAVN",
+"name": "Navan",
+"address": "0xf7181b63Fdb858558A74ba96BC42732684cd7965",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf7181b63fdb858558a74ba96bc42732684cd7965.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NBIS",
+"name": "Nebius Group",
+"address": "0x9D9c6684F596F66a64C030B93A886D51Fd4D7931",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x9d9c6684f596f66a64c030b93a886d51fd4d7931.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NET",
+"name": "Cloudflare, Inc. Class A common stock",
+"address": "0x116F00968269B7bfbaD4109cE591d6E74c0601d4",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x116f00968269b7bfbad4109ce591d6e74c0601d4.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NFLX",
+"name": "Netflix",
+"address": "0xE0444EF8BF4eD74f74FD73686e2ddF4C1c5591E8",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NNE",
+"name": "Nano Nuclear Energy",
+"address": "0xBEF75684C43c4ea7BD18Dd532a2244674Ee8b926",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xbef75684c43c4ea7bd18dd532a2244674ee8b926.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NOW",
+"name": "ServiceNow",
+"address": "0x0C3260aF4B8f13a69c4c2dFb84fD667890CDFa14",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x0c3260af4b8f13a69c4c2dfb84fd667890cdfa14.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NU",
+"name": "Nu",
+"address": "0x408c14038a04f7bD235329E26d2bf569ee20e250",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x408c14038a04f7bd235329e26d2bf569ee20e250.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "NVDA",
+"name": "NVIDIA",
+"address": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec.png",
+"multiplier": "1.000775159164630595"
+},
+{
+"symbol": "NVTS",
+"name": "Navitas Semiconductor",
+"address": "0xbE6702d7b70315376dC48a3293f24f0982F86386",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xbe6702d7b70315376dc48a3293f24f0982f86386.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "OKLO",
+"name": "Oklo",
+"address": "0x8B2f88497f15A18E9D4FFa1a8fFB8538399aE774",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x8b2f88497f15a18e9d4ffa1a8ffb8538399ae774.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ON",
+"name": "ON Semiconductor",
+"address": "0xbBD09F72b025360FeE5C928053Dca6248d35be54",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xbbd09f72b025360fee5c928053dca6248d35be54.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ONTO",
+"name": "Onto Innovation",
+"address": "0x8ff63eAeEe3fE54Ba450c4F5538064Ec5A893Aef",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x8ff63eaeee3fe54ba450c4f5538064ec5a893aef.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ORCL",
+"name": "Oracle",
+"address": "0xb0992820E760d836549ba69BC7598b4af75dEE03",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb0992820e760d836549ba69bc7598b4af75dee03.png",
+"multiplier": "1.002210914971013375"
+},
+{
+"symbol": "OUST",
+"name": "Ouster",
+"address": "0x40E7a279850e443f582059ae5dC1c3b6563E6395",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x40e7a279850e443f582059ae5dc1c3b6563e6395.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "P",
+"name": "Everpure",
+"address": "0x1Cdad396DB64BDa184d5182A97Dd9B3C62100b7D",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x1cdad396db64bda184d5182a97dd9b3c62100b7d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PANW",
+"name": "Palo Alto Networks",
+"address": "0xB039597eD45CBa7B6E2fb9E8BE51802969CEe5Be",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb039597ed45cba7b6e2fb9e8be51802969cee5be.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PATH",
+"name": "UiPath",
+"address": "0xfb2664f07B6Aadd29ea7a59D8859b1AeB8645cDa",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xfb2664f07b6aadd29ea7a59d8859b1aeb8645cda.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PENG",
+"name": "Penguin Solutions",
+"address": "0x9b23573b156B52565012F5cE02CDF60AFBaa70Be",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x9b23573b156b52565012f5ce02cdf60afbaa70be.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PFE",
+"name": "Pfizer",
+"address": "0x7066A64c24e4206CD62E83bf198c1E7EB361F51e",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x7066a64c24e4206cd62e83bf198c1e7eb361f51e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PL",
+"name": "Planet Labs",
+"address": "0xAA4d64474c172010aB57719cb9951E6142a100d3",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xaa4d64474c172010ab57719cb9951e6142a100d3.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PLTR",
+"name": "Palantir Technologies",
+"address": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "POET",
+"name": "POET Technologies",
+"address": "0xcf6B2D875361be807EAfa57458c80f28521F9333",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xcf6b2d875361be807eafa57458c80f28521f9333.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "POWL",
+"name": "Powell Industries",
+"address": "0x237c16D66590F67B886d978ACD362EAeaD8B18c7",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x237c16d66590f67b886d978acd362eaead8b18c7.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "PR",
+"name": "Permian Resources",
+"address": "0x4189F0c66EBBB0bfeF1C31f763131361EF32f77C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x4189f0c66ebbb0bfef1c31f763131361ef32f77c.png",
+"multiplier": "1.004477942292229526"
+},
+{
+"symbol": "PWR",
+"name": "Quanta",
+"address": "0x9Ab02Ead789b6903c3c44d0ED32F9c707CDF12FD",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x9ab02ead789b6903c3c44d0ed32f9c707cdf12fd.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "QBTS",
+"name": "D-Wave Quantum Inc. Common Stock",
+"address": "0xC583c60aeF9Dc401Da72cEC1B404743a93cea1Cc",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc583c60aef9dc401da72cec1b404743a93cea1cc.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "QCOM",
+"name": "Qualcomm",
+"address": "0x0f17206447090e464C277571124dD2688E48AEA9",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x0f17206447090e464c277571124dd2688e48aea9.png",
+"multiplier": "1.001228122794792830"
+},
+{
+"symbol": "QNT",
+"name": "Quantinuum Inc. Class A",
+"address": "0xB7EDfE2F33C1aC06830a971dFb559bDe8A2a3d76",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb7edfe2f33c1ac06830a971dfb559bde8a2a3d76.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "QQQ",
+"name": "Invesco QQQ",
+"address": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xd5f3879160bc7c32ebb4dc785f8a4f505888de68.png",
+"multiplier": "1.000700791241405425"
+},
+{
+"symbol": "QUBT",
+"name": "Quantum Computing",
+"address": "0x59818904ab4cE163b3cE4FfB64f2D6Ca02c434B4",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x59818904ab4ce163b3ce4ffb64f2d6ca02c434b4.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RBLX",
+"name": "Roblox",
+"address": "0xF0C4BF4C582cb3836e98394b1d4e7B7281101bE8",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RCAT",
+"name": "Red Cat",
+"address": "0xFDE6b5d9BB419B10C23268c74e369AbFF39C0460",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xfde6b5d9bb419b10c23268c74e369abff39c0460.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RDDT",
+"name": "Reddit",
+"address": "0x05b37Fb53A299a1b874A619e1c4C404D52C36F4C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x05b37fb53a299a1b874a619e1c4c404d52c36f4c.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RDW",
+"name": "Redwire",
+"address": "0x92Ef19E82bD8fF36661DE838D5eaE7e5CEF0EfFE",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x92ef19e82bd8ff36661de838d5eae7e5cef0effe.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RGTI",
+"name": "Rigetti Computing",
+"address": "0x284358abc07F9359f19f4b5b4aC91901Be2597Ba",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x284358abc07f9359f19f4b5b4ac91901be2597ba.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RIVN",
+"name": "Rivian Automotive",
+"address": "0xB1BF26c1D20ff267A4f93550d1E0d06ac40a114B",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb1bf26c1d20ff267a4f93550d1e0d06ac40a114b.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RKLB",
+"name": "Rocket Lab Corporation",
+"address": "0x3b14C39E89D60D627b42a1A4CA45b5bb45Fc12e2",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x3b14c39e89d60d627b42a1a4ca45b5bb45fc12e2.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "RUN",
+"name": "Sunrun",
+"address": "0x756Bc80af765C82da966a788858d65aDF14f3793",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x756bc80af765c82da966a788858d65adf14f3793.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SATS",
+"name": "EchoStar",
+"address": "0x95052ddcd5DC25641657424A8Cf04834997E1730",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x95052ddcd5dc25641657424a8cf04834997e1730.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SCHD",
+"name": "Schwab US Dividend Equity ETF",
+"address": "0xd63ABB2C13d7a8421a8017a712802053568e3C1D",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xd63abb2c13d7a8421a8017a712802053568e3c1d.png",
+"multiplier": "1.005538606893683992"
+},
+{
+"symbol": "SGOV",
+"name": "iShares 0-3 Month Treasury Bond",
+"address": "0x92FD66527192E3e61d4DDd13322Aa222DE86F9B5",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x92fd66527192e3e61d4ddd13322aa222de86f9b5.png",
+"multiplier": "1.005101770003214918"
+},
+{
+"symbol": "SHOP",
+"name": "Shopify",
+"address": "0xF53F66751B1Eff985311b693531E3290F600c410",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf53f66751b1eff985311b693531e3290f600c410.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SHY",
+"name": "iShares 1-3 Year Treasury Bond ETF",
+"address": "0xBE274710Bf3d9567e1B290eF6a5F9f90ca016FD8",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xbe274710bf3d9567e1b290ef6a5f9f90ca016fd8.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SIMO",
+"name": "Silicon Motion",
+"address": "0x77E655E37F4d913fB9540e0d541D824171a60e81",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x77e655e37f4d913fb9540e0d541d824171a60e81.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SKHY",
+"name": "SK hynix Inc. American Depositary Shares",
+"address": "0x84CAb63bc87912E71ad199ff14A0bA45de68FeF8",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x84cab63bc87912e71ad199ff14a0ba45de68fef8.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SLS",
+"name": "SELLAS Life Sciences",
+"address": "0x285b231728c7E4333799183DF1094d775246a535",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x285b231728c7e4333799183df1094d775246a535.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SLV",
+"name": "iShares Silver Trust",
+"address": "0x411eFb0E7f985935DAec3D4C3ebaEa0d0AD7D89f",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x411efb0e7f985935daec3d4c3ebaea0d0ad7d89f.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SMCI",
+"name": "Super Micro Computer",
+"address": "0xc01aA1fECeC0605b13bc84874ff7256C0f5F562a",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xc01aa1fecec0605b13bc84874ff7256c0f5f562a.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SMH",
+"name": "VanEck Semiconductor ETF",
+"address": "0x072f979c2CAc8e1391B0162a87Fee094bF8744a0",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x072f979c2cac8e1391b0162a87fee094bf8744a0.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SMR",
+"name": "NuScale Power",
+"address": "0x1Eebee7F74517e0279dFb09d25B0407bEEc3FDd6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x1eebee7f74517e0279dfb09d25b0407beec3fdd6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SNAP",
+"name": "Snap",
+"address": "0xF6589F11Bc40b669e584073F428B05562F568733",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf6589f11bc40b669e584073f428b05562f568733.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SNDK",
+"name": "Sandisk Corporation",
+"address": "0xB90A19fF0Af67f7779afF50A882A9CfF42446400",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb90a19ff0af67f7779aff50a882a9cff42446400.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SNOW",
+"name": "Snowflake",
+"address": "0xBa0CAB75495255d0cB58E22B648bFED4ECD1F47E",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xba0cab75495255d0cb58e22b648bfed4ecd1f47e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SOFI",
+"name": "SoFi Technologies",
+"address": "0x98E75885157C80992A8D41b696D8c9C6Fb30A926",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x98e75885157c80992a8d41b696d8c9c6fb30a926.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SOUN",
+"name": "SoundHound AI",
+"address": "0x6E3Dfd9f7e1649BaA14D25cac18C94d62dB10A54",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x6e3dfd9f7e1649baa14d25cac18c94d62db10a54.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SOXX",
+"name": "iShares Semiconductor ETF",
+"address": "0x75742c18BC1f1C5c5f448f4C9D9C6F66dafAAa38",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x75742c18bc1f1c5c5f448f4c9d9c6f66dafaaa38.png",
+"multiplier": "1.000450838210425960"
+},
+{
+"symbol": "SPCX",
+"name": "Space Exploration Technologies Corp. Class A Common Stock",
+"address": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "SPMO",
+"name": "Invesco S&P 500 Momentum ETF",
+"address": "0xAd622320e520de39e72d41EF07438C3Fd3354875",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xad622320e520de39e72d41ef07438c3fd3354875.png",
+"multiplier": "1.002024883742416310"
+},
+{
+"symbol": "SPY",
+"name": "SPDR S&P 500 ETF Trust",
+"address": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x117cc2133c37b721f49de2a7a74833232b3b4c0c.png",
+"multiplier": "1.001717991187472003"
+},
+{
+"symbol": "TE",
+"name": "T1 Energy",
+"address": "0xb1969f6604CA1AE7a2cD3F1827876e914594CA2D",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb1969f6604ca1ae7a2cd3f1827876e914594ca2d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TEAM",
+"name": "Atlassian Corporation",
+"address": "0x5B97476b922F3305131B8f0B9D333172E87f4aaE",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x5b97476b922f3305131b8f0b9d333172e87f4aae.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TEM",
+"name": "Tempus AI",
+"address": "0xB1CC0EC7Db69Cf43539119814df40071b9d61793",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xb1cc0ec7db69cf43539119814df40071b9d61793.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TER",
+"name": "Teradyne",
+"address": "0x2778C5024D5cA2CdB0f8eAD671ffc69963AdCD9C",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x2778c5024d5ca2cdb0f8ead671ffc69963adcd9c.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TSEM",
+"name": "Tower Semiconductor",
+"address": "0x89776d4Cd68193597A2fC132cfaC1fDe36CCeA8a",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x89776d4cd68193597a2fc132cfac1fde36ccea8a.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TSLA",
+"name": "Tesla",
+"address": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x322f0929c4625ed5bad873c95208d54e1c003b2d.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TSM",
+"name": "Taiwan Semiconductor Manufacturing",
+"address": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x58ffe4a942d3885baa22d7520691f611ef09e7aa.png",
+"multiplier": "1.001463024159690554"
+},
+{
+"symbol": "TTD",
+"name": "Trade Desk",
+"address": "0x0b5fb4031cae9163db10B169Ee72685F0EdC8545",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x0b5fb4031cae9163db10b169ee72685f0edc8545.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "TTWO",
+"name": "Take-Two Interactive Software",
+"address": "0x5e81213613b6B86EaB4c6c50d718d34359459786",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x5e81213613b6b86eab4c6c50d718d34359459786.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "UMC",
+"name": "United Microelectronics",
+"address": "0x0E6e67Ba88e7b5d9B67636A215c76779B948dE79",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x0e6e67ba88e7b5d9b67636a215c76779b948de79.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "UNH",
+"name": "UnitedHealth",
+"address": "0xcF364ea52787e289De6F32077834056E3E70D6A8",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xcf364ea52787e289de6f32077834056e3e70d6a8.png",
+"multiplier": "1.004241501039702113"
+},
+{
+"symbol": "UPS",
+"name": "UPS",
+"address": "0xf23250dac154D05Bb671CB0d0eBEf3c635c79CE2",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf23250dac154d05bb671cb0d0ebef3c635c79ce2.png",
+"multiplier": "1.002208724969205741"
+},
+{
+"symbol": "USAR",
+"name": "USA Rare Earth",
+"address": "0xd917B029C761D264c6A312BBbcDA868658eF86a6",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xd917b029c761d264c6a312bbbcda868658ef86a6.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "USO",
+"name": "United States Oil Fund",
+"address": "0xa30FA36Db767ad9eD3f7a60fC79526fB4d56D344",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "VICR",
+"name": "Vicor",
+"address": "0x6006ed4B2F94110851ff7509D97D034f0EeD9226",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x6006ed4b2f94110851ff7509d97d034f0eed9226.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "VRT",
+"name": "Vertiv",
+"address": "0xFA78C12E6488814A0262E4e802749a4a737d5fB7",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xfa78c12e6488814a0262e4e802749a4a737d5fb7.png",
+"multiplier": "1.000162788892052072"
+},
+{
+"symbol": "VSAT",
+"name": "ViaSat",
+"address": "0x26dCbfb34FC83CAbD6990f449674efDc6097fF85",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x26dcbfb34fc83cabd6990f449674efdc6097ff85.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "VST",
+"name": "Vistra",
+"address": "0x561e2a49212b7cCF47f2744Ccb83e200722fADBc",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x561e2a49212b7ccf47f2744ccb83e200722fadbc.png",
+"multiplier": "1.001114738710796417"
+},
+{
+"symbol": "VTI",
+"name": "Vanguard Morningstar Total Stock Market ETF",
+"address": "0x0594134DF3f171a354D9C85eBD65b7A6148F6D09",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x0594134df3f171a354d9c85ebd65b7a6148f6d09.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "WDAY",
+"name": "Workday",
+"address": "0x82DA4646242e1D962e96e932269Dc644c94a9CaA",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x82da4646242e1d962e96e932269dc644c94a9caa.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "WDC",
+"name": "Western Digital",
+"address": "0xF52597345A8Edf418bc4071b4a35112472277D3e",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf52597345a8edf418bc4071b4a35112472277d3e.png",
+"multiplier": "1.000217565250523909"
+},
+{
+"symbol": "WULF",
+"name": "TeraWulf",
+"address": "0x348Be1A8663f15edDe5CDf8A96BB69078f7aB6Fd",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x348be1a8663f15edde5cdf8a96bb69078f7ab6fd.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "WYFI",
+"name": "WhiteFiber, Inc.",
+"address": "0x9e7ABD3C9139D14E4c86DcE0e455AAB7A0C2FB3E",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x9e7abd3c9139d14e4c86dce0e455aab7a0c2fb3e.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "XLK",
+"name": "State Street Technology Select Sector SPDR ETF",
+"address": "0x15Cd20759CE7F3285c29A319dE2D1A2e098c6f43",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x15cd20759ce7f3285c29a319de2d1a2e098c6f43.png",
+"multiplier": "1.000804404520428861"
+},
+{
+"symbol": "XNDU",
+"name": "Xanadu Quantum",
+"address": "0xA8eB3BCcbf2017eE7CBfb652eB51CF2E1B153289",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xa8eb3bccbf2017ee7cbfb652eb51cf2e1b153289.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "XOM",
+"name": "ExxonMobil Holdings Corporation",
+"address": "0xf9B46d3D1B22199D4D1025a9cEDB540A33F1a2d5",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0xf9b46d3d1b22199d4d1025a9cedb540a33f1a2d5.png",
+"multiplier": "1.001039563764661900"
+},
+{
+"symbol": "ZM",
+"name": "Zoom",
+"address": "0x44c4F142009036cF477eD2d09932051843137CF1",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x44c4f142009036cf477ed2d09932051843137cf1.png",
+"multiplier": "1.000000000000000000"
+},
+{
+"symbol": "ZS",
+"name": "Zscaler",
+"address": "0x7dc013eB55e436f30d7ED1AFE4E36d6e45e3c3f7",
+"logo": "https://cdn.robinhood.com/ncw_assets/logos/0x7dc013eb55e436f30d7ed1afe4e36d6e45e3c3f7.png",
+"multiplier": "1.000000000000000000"
+}
+]
