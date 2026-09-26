@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Urbanist, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Instrument_Serif, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const urbanist = Urbanist({ variable: "--font-urbanist", subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
-const mono = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"] });
+const sans = Plus_Jakarta_Sans({ variable: "--font-ui", subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
+const serif = Instrument_Serif({ variable: "--font-display", subsets: ["latin"], weight: "400", style: ["normal", "italic"] });
+const mono = Geist_Mono({ variable: "--font-num", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3100"),
@@ -18,7 +19,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.variable} ${mono.variable} antialiased`}>{children}</body>
+      <body className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>{children}</body>
     </html>
   );
 }

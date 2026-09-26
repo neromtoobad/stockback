@@ -199,8 +199,8 @@ export default function App() {
             </div>
             <div className="mt-2 grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] sm:items-center">
               <div>
-                <h2 className="text-[34px] leading-[1.02] font-extrabold tracking-tight">
-                  Scan a<br className="hidden sm:block" /> receipt
+                <h2 className="text-[34px] leading-[1.02] font-bold tracking-[-0.025em]">
+                  Scan a<br className="hidden sm:block" /> <span className="accent-serif text-[1.15em]">receipt</span>
                 </h2>
                 <p className="mt-2 text-sm text-muted">Paper receipts, order emails, card statements. Any currency.</p>
               </div>
@@ -217,7 +217,7 @@ export default function App() {
                 </Tile>
                 <Tile onClick={() => setPanel(panel === "rules" ? "none" : "rules")} active={panel === "rules"}>
                   <span className="text-[11px] leading-tight text-muted">Your rules</span>
-                  <span className="text-2xl font-extrabold text-gain">{ruleSummary.rate}</span>
+                  <span className="num text-[26px] font-bold tracking-[-0.03em] text-gain">{ruleSummary.rate}</span>
                   <span className="w-full truncate text-[11px] font-semibold">{ruleSummary.rest}</span>
                 </Tile>
               </div>
@@ -307,10 +307,9 @@ export default function App() {
         {/* ---------- right column ---------- */}
         <div className="min-w-0 space-y-6">
           <Intro className="hidden lg:block" />
-          <div className="hidden space-y-3 lg:block">
-            {SAMPLES.map((s, i) => (
-              <SampleCard key={s.id} s={s} defaultOpen={i === 0} busy={busy} active={activeSample === s.id && busy} onRun={() => runSample(s)} />
-            ))}
+          <div className="hidden space-y-4 lg:block">
+            <SampleCard s={SAMPLES[0]} defaultOpen busy={busy} active={activeSample === SAMPLES[0].id && busy} onRun={() => runSample(SAMPLES[0])} />
+            <SampleList samples={SAMPLES.slice(1)} busy={busy} activeId={busy ? activeSample : null} onRun={runSample} />
           </div>
         </div>
       </div>
@@ -354,7 +353,7 @@ function TopBar() {
       <Link href="/" className="flex shrink-0 items-center gap-2.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icon.svg" alt="" className="h-9 w-9" />
-        <span className="text-xl font-extrabold tracking-tight">stockback</span>
+        <span className="text-xl font-bold tracking-tight">stockback</span>
       </Link>
       <div className="relative mx-2 hidden min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)] md:block">
         <div className="marquee flex w-max gap-8 text-[13px] whitespace-nowrap">
@@ -392,9 +391,8 @@ function TopBar() {
 function Intro({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
-      <h1 className="text-[34px] leading-[1.05] font-extrabold tracking-tight sm:text-[40px]">
-        Every receipt buys you
-        <br /> a piece of the company.
+      <h1 className="text-[36px] leading-[1.02] font-bold tracking-[-0.025em] sm:text-[46px]">
+        Every receipt buys you <span className="accent-serif text-[1.12em] text-accent-deep">a piece of the company.</span>
       </h1>
       <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
         SERV Reasoning works out who actually profits from each thing you bought, applies <em>your</em> rules, and an agent wallet buys
@@ -421,7 +419,12 @@ function SampleCard({ s, defaultOpen, busy, active, onRun }: { s: Sample; defaul
         </button>
       </div>
       <div className="relative mt-3 flex items-center gap-3">
-        <span className="rounded-md bg-mint px-2.5 py-1 text-base font-extrabold text-ink">{s.tag}</span>
+        <span className="text-[11px] leading-tight text-white/75">
+          Featured
+          <br />
+          sample
+        </span>
+        <span className="rounded-md bg-mint px-2.5 py-1 text-base font-bold text-ink">{s.tag}</span>
         <button
           onClick={onRun}
           disabled={busy}
@@ -445,6 +448,52 @@ function SampleCard({ s, defaultOpen, busy, active, onRun }: { s: Sample; defaul
   );
 }
 
+function SampleList({ samples, busy, activeId, onRun }: { samples: Sample[]; busy: boolean; activeId: string | null; onRun: (s: Sample) => void }) {
+  return (
+    <div className="glass rounded-[20px] p-2">
+      <p className="px-3 pt-2 pb-1 text-xs text-muted">More receipts to try</p>
+      <ul>
+        {samples.map((s) => (
+          <li key={s.id}>
+            <button
+              onClick={() => onRun(s)}
+              disabled={busy}
+              className="group flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition hover:bg-white/70 disabled:opacity-60"
+            >
+              <ReceiptGlyph seed={s.id} />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold tracking-[-0.01em]">{s.title}</span>
+                  <span className="rounded-md bg-mint/25 px-1.5 py-0.5 text-[10px] font-semibold text-gain">{s.tag}</span>
+                </div>
+                <p className="truncate text-[12px] text-muted">{s.blurb}</p>
+              </div>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-white shadow-md transition group-hover:scale-105">
+                {activeId === s.id ? <Spinner small /> : <ArrowIcon small />}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ReceiptGlyph({ seed }: { seed: string }) {
+  const h = hue(seed);
+  return (
+    <span className="relative flex h-11 w-9 shrink-0 items-start justify-center rounded-md bg-white pt-1.5 shadow-sm ring-1 ring-black/5">
+      <span className="flex w-5 flex-col gap-[3px]">
+        <span className="h-[3px] w-full rounded-full" style={{ background: `hsl(${h} 45% 60%)` }} />
+        <span className="h-[2px] w-4/5 rounded-full bg-black/15" />
+        <span className="h-[2px] w-full rounded-full bg-black/15" />
+        <span className="h-[2px] w-3/5 rounded-full bg-black/15" />
+        <span className="h-[2px] w-full rounded-full bg-black/15" />
+      </span>
+    </span>
+  );
+}
+
 function WalletCard({ pocket }: { pocket: PocketData | null }) {
   const [wallet, setWallet] = useState<Wallet | null>(null);
   useEffect(() => {
@@ -460,7 +509,10 @@ function WalletCard({ pocket }: { pocket: PocketData | null }) {
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-[11px] text-white/50">Agent wallet · Coinbase AgentKit</p>
-          <h3 className="mt-1 text-[22px] leading-tight font-bold">Live on Robinhood Chain</h3>
+          <h3 className="mt-1 text-[24px] leading-tight font-bold tracking-[-0.02em]">
+            Live on <br className="xl:hidden" />
+            <span className="accent-serif text-[1.12em] text-mint">Robinhood Chain</span>
+          </h3>
         </div>
         {address && (
           <a href={`${EXPLORER}/address/${address}`} target="_blank" rel="noreferrer" className="shrink-0 rounded-full bg-white/10 px-3 py-1.5 font-mono text-[11px] hover:bg-white/15">
@@ -515,7 +567,9 @@ function MoneyCard() {
   return (
     <section className="violet relative overflow-hidden rounded-[20px] p-5 text-white">
       <Wave className="pointer-events-none absolute inset-x-0 bottom-0 h-24 w-full opacity-30" seed="money" />
-      <h3 className="relative text-[22px] font-bold">How Stockback earns</h3>
+      <h3 className="relative text-[24px] font-bold tracking-[-0.02em]">
+        How Stockback <span className="accent-serif text-[1.12em]">earns</span>
+      </h3>
       <div className="relative mt-4 grid gap-2">
         {[
           ["1%", "fee on every stock-back buy"],
@@ -523,7 +577,7 @@ function MoneyCard() {
           ["Pro", "auto-import from email receipts and statements"],
         ].map(([k, v]) => (
           <div key={k} className="flex items-center gap-3 rounded-xl bg-white/[0.12] p-2.5">
-            <div className="w-12 shrink-0 rounded-md bg-mint py-0.5 text-center text-base font-extrabold text-ink">{k}</div>
+            <div className="w-12 shrink-0 rounded-md bg-mint py-0.5 text-center text-base font-bold text-ink">{k}</div>
             <p className="text-[13px] leading-snug text-white/90">{v}</p>
           </div>
         ))}
@@ -562,9 +616,9 @@ function PocketCard({ pocket, ruleSummary }: { pocket: PocketData | null; ruleSu
       </div>
       <div className="mt-1 grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] sm:items-center">
         <div>
-          <h2 className="text-[34px] leading-[1.02] font-extrabold tracking-tight">
+          <h2 className="text-[34px] leading-[1.02] font-bold tracking-[-0.025em]">
             Stock-back
-            <br className="hidden sm:block" /> portfolio
+            <br className="hidden sm:block" /> <span className="accent-serif text-[1.15em]">portfolio</span>
           </h2>
           <p className="mt-2 text-sm text-muted">
             {ruleSummary.rate} back{ruleSummary.rest ? ` · ${ruleSummary.rest}` : ""}
@@ -576,24 +630,23 @@ function PocketCard({ pocket, ruleSummary }: { pocket: PocketData | null; ruleSu
         <div className="grid grid-cols-3 gap-3">
           <div className="tile flex flex-col rounded-2xl p-3">
             <span className="text-[11px] leading-tight text-muted">Portfolio value</span>
-            <span className="mt-2 text-xl font-extrabold text-gain">{usd(value, value < 1 ? 3 : 2)}</span>
-            <Sparkline values={earnedSeries} className="mt-auto h-8 w-full" />
+            <span className="num mt-2 text-[22px] font-bold tracking-[-0.03em] text-gain">{runs.length ? usd(value, value < 1 ? 3 : 2) : "—"}</span>
+            {runs.length > 0 && <Sparkline values={earnedSeries} className="mt-auto h-8 w-full" />}
           </div>
           <div className="tile flex flex-col rounded-2xl p-3">
             <span className="text-[11px] leading-tight text-muted">Spending tracked</span>
-            <span className="mt-2 text-xl font-extrabold text-gain">{usd(spent, 0)}</span>
-            <Sparkline values={spendSeries} className="mt-auto h-8 w-full" />
+            <span className="num mt-2 text-[22px] font-bold tracking-[-0.03em] text-gain">{runs.length ? usd(spent, 0) : "—"}</span>
+            {runs.length > 0 && <Sparkline values={spendSeries} className="mt-auto h-8 w-full" />}
           </div>
           <div className="flex flex-col gap-3">
             <div className="tile rounded-2xl p-3">
               <span className="text-[11px] text-muted">Companies owned</span>
-              <div className="text-lg font-extrabold">{holdings.length}</div>
+              <div className="num text-lg font-bold">{runs.length ? holdings.length : "—"}</div>
             </div>
             <div className="tile rounded-2xl p-3">
               <span className="text-[11px] text-muted">Since first scan</span>
-              <div className={`text-lg font-extrabold ${pnl >= 0 ? "text-gain" : "text-warn"}`}>
-                {pnl >= 0 ? "+" : ""}
-                {pnl.toFixed(2)}%
+              <div className={`num text-lg font-bold ${pnl >= 0 ? "text-gain" : "text-warn"}`}>
+                {runs.length ? `${pnl >= 0 ? "+" : ""}${pnl.toFixed(2)}%` : "—"}
               </div>
             </div>
           </div>
@@ -697,7 +750,7 @@ function RunPanel(props: {
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-xs text-muted">{busy ? "SERV is working" : phase === "error" ? "Stopped" : "Done"}</p>
-          <h2 className="truncate text-2xl font-extrabold tracking-tight">{receipt?.merchant || "Reading receipt…"}</h2>
+          <h2 className="truncate text-2xl font-bold tracking-[-0.03em]">{receipt?.merchant || "Reading receipt…"}</h2>
           <p className="font-mono text-xs text-muted">
             {(elapsed / 1000).toFixed(1)}s{receipt ? ` · ${receipt.currency} ${receipt.total.toLocaleString()} · ${receipt.items.length} items` : ""}
           </p>
@@ -705,7 +758,7 @@ function RunPanel(props: {
         {run && run.fills.length > 0 && (
           <div className="hidden shrink-0 text-right sm:block">
             <p className="text-[11px] text-muted">Stock-back</p>
-            <p className="text-2xl font-extrabold text-gain">+{usd(run.total_usd)}</p>
+            <p className="num text-2xl font-bold tracking-[-0.02em] text-gain">+{usd(run.total_usd)}</p>
           </div>
         )}
       </div>
@@ -865,7 +918,7 @@ export function PlanResult({ plan }: { plan: Plan }) {
               <div className="truncate text-xs text-muted">{l.note}</div>
             </div>
             <div className="flex items-center gap-2 text-right">
-              {l.boost > 1 && <span className="rounded-md bg-mint px-1.5 py-0.5 text-[10px] font-extrabold text-ink">{l.boost}× boost</span>}
+              {l.boost > 1 && <span className="rounded-md bg-mint px-1.5 py-0.5 text-[10px] font-bold text-ink">{l.boost}× boost</span>}
               {l.target ? <TickerChip t={l.target} muted={l.via === "fallback"} /> : <span className="font-mono text-xs text-muted">skipped</span>}
               <span className="w-14 font-mono text-xs">{l.stockback_usd ? usd(l.stockback_usd) : "—"}</span>
             </div>
@@ -889,7 +942,9 @@ export function BuyResult({ run, plan }: { run: Run; plan: Plan }) {
           <p className="relative text-xs text-white/75">
             {usd(run.total_usd)} of stock from a {usd(plan.spend_usd)} receipt
           </p>
-          <p className="relative mt-1 text-xl leading-snug font-extrabold">You now own a piece of {list}.</p>
+          <p className="relative mt-1 text-xl leading-snug font-bold tracking-[-0.02em]">
+            You now own <span className="accent-serif text-[1.15em]">a piece of</span> {list}.
+          </p>
         </div>
       ) : (
         <p className="text-sm text-muted">Nothing on this receipt earned stock-back under your rules.</p>
@@ -952,7 +1007,7 @@ export function FillRow({ f }: { f: Fill }) {
         </div>
       </div>
       {f.tx_hash ? (
-        <a href={`${EXPLORER}/tx/${f.tx_hash}`} target="_blank" rel="noreferrer" className="shrink-0 rounded-md bg-mint px-2 py-1 text-[10px] font-extrabold text-ink">
+        <a href={`${EXPLORER}/tx/${f.tx_hash}`} target="_blank" rel="noreferrer" className="shrink-0 rounded-md bg-mint px-2 py-1 text-[10px] font-bold text-ink">
           LIVE TX ↗
         </a>
       ) : (
@@ -1020,7 +1075,9 @@ function HowItWorks() {
         <div className="flex flex-wrap items-end justify-between gap-2">
           <div>
             <p className="text-xs text-muted">How it works</p>
-            <h2 className="text-[28px] leading-tight font-extrabold tracking-tight">Judgment in SERV. Money in code.</h2>
+            <h2 className="text-[30px] leading-tight font-bold tracking-[-0.03em]">
+              Judgment in SERV. <span className="accent-serif text-[1.12em] text-accent-deep">Money in code.</span>
+            </h2>
           </div>
           <p className="max-w-md text-sm text-muted">
             Stock-back rewards have been US-only for years. Robinhood Chain stock tokens are built for everyone else, so a Lagos grocery run
@@ -1031,7 +1088,7 @@ function HowItWorks() {
           {steps.map(([t, d, tag], i) => (
             <div key={t} className="tile flex flex-col rounded-2xl p-4">
               <div className="flex items-center justify-between">
-                <span className="text-lg font-extrabold">
+                <span className="text-lg font-bold">
                   {i + 1}. {t}
                 </span>
                 <span className="rounded-md bg-mint/30 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-gain">{tag}</span>
@@ -1128,9 +1185,10 @@ function Chevron({ up }: { up: boolean }) {
   );
 }
 
-function ArrowIcon() {
+function ArrowIcon({ small }: { small?: boolean }) {
+  const z = small ? 14 : 18;
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={z} height={z} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
