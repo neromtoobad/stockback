@@ -9,7 +9,7 @@ export const contentType = "image/png";
 
 export default async function OG({ params }: { params: Promise<{ id: string }> }) {
   const run = await getRun((await params).id);
-  const fills = (run?.fills ?? []).filter((f) => !f.error).slice(0, 4);
+  const fills = (run?.fills ?? []).filter((f) => !f.error && (run?.mode !== "live" || f.tx_hash)).slice(0, 4);
   const names = fills.map((f) => token(f.ticker)?.name ?? f.ticker);
   return new ImageResponse(
     (

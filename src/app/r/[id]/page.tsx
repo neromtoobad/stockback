@@ -16,7 +16,7 @@ function owned(names: string[]) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const run = await getRun((await params).id);
   if (!run) return { title: "Stockback" };
-  const names = run.fills.filter((f) => !f.error).map((f) => token(f.ticker)?.name ?? f.ticker);
+  const names = run.fills.filter((f) => !f.error && (run.mode !== "live" || f.tx_hash)).map((f) => token(f.ticker)?.name ?? f.ticker);
   const title = `A ${run.merchant} receipt bought a piece of ${owned(names)}`;
   return {
     title: `${title} · Stockback`,

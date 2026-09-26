@@ -958,7 +958,12 @@ export function PlanResult({ plan }: { plan: Plan }) {
 }
 
 export function BuyResult({ run, plan }: { run: Run; plan: Plan }) {
-  const names = run.fills.map((f) => tokenInfo.get(f.ticker)?.name ?? f.ticker);
+  // On a live receipt only the on-chain legs are real ownership; keep simulated legs separate.
+  const live = run.mode === "live";
+  const owned = live ? run.fills.filter((f) => f.tx_hash) : run.fills;
+  const liveUsd = run.fills.filter((f) => f.tx_hash).reduce((s, f) => s + f.usd, 0);
+  const simUsd = run.fills.filter((f) => !f.tx_hash).reduce((s, f) => s + f.usd, 0);
+  const names = owned.map((f) => tokenInfo.get(f.ticker)?.name ?? f.ticker);
   const list = names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names.at(-1)}` : names[0];
   return (
     <div className="space-y-4">
@@ -966,7 +971,9 @@ export function BuyResult({ run, plan }: { run: Run; plan: Plan }) {
         <div className="violet relative overflow-hidden rounded-2xl p-4 text-white">
           <Wave className="pointer-events-none absolute inset-x-0 bottom-0 h-16 w-full opacity-40" seed={run.id} />
           <p className="relative text-xs text-white/75">
-            {usd(run.total_usd)} of stock from a {usd(plan.spend_usd)} receipt
+            {live
+              ? `${usd(liveUsd)} bought on-chain from a ${usd(plan.spend_usd)} receipt${simUsd > 0 ? ` · ${usd(simUsd)} more simulated` : ""}`
+              : `${usd(run.total_usd)} of stock from a ${usd(plan.spend_usd)} receipt`}
           </p>
           <p className="relative mt-1 text-xl leading-snug font-bold tracking-[-0.02em]">
             You now own <span className="accent-serif text-[1.15em]">a piece of</span> {list}.
