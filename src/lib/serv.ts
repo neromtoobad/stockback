@@ -69,6 +69,9 @@ export async function servJson<T>(args: {
       type: "json_schema",
       json_schema: { name: args.schemaName, strict: true, schema: args.schema },
     },
+    // SERV has been seen deriving an output limit above the model's 128K max (HTTP 400),
+    // so pin a generous ceiling explicitly. Real outputs here are a few hundred tokens.
+    max_completion_tokens: 16_000,
     ...(args.reasoningEffort ? { reasoning_effort: args.reasoningEffort as "low" } : {}),
     ...(tools.length ? { tools } : {}),
   };
