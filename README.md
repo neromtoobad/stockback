@@ -76,3 +76,7 @@ npm run dev            # http://localhost:3000
 - Robinhood Chain lists 195 tokens, mostly tech, so many consumer brands (Coca-Cola, PepsiCo, Starbucks) aren't available yet. Those purchases go to the store's parent or your fallback fund, and the app says so.
 - Live buys come from one demo agent wallet funded with about $1, so they are tiny. Per-user wallets are the obvious next step.
 - Stock tokens are not available to US persons and some other regions. Nothing here is investment advice.
+
+## Credits
+
+Company logos come from [Parqet](https://parqet.com)'s public logo API, with 14 gaps filled from Financial Modeling Prep. They are bundled in `public/logos` and used only to identify each stock token. Stock data and token contracts come from Robinhood's public tokenization API and Robinhood Chain.
