@@ -211,7 +211,7 @@ export default function App() {
                   <span className="text-sm font-bold">Scan</span>
                 </Tile>
                 <Tile onClick={() => setPanel(panel === "paste" ? "none" : "paste")} disabled={busy} active={panel === "paste"}>
-                  <span className="text-[11px] leading-tight text-muted">Order email or statement</span>
+                  <span className="text-[11px] leading-tight text-muted">Email or statement</span>
                   <PasteIcon />
                   <span className="text-sm font-bold">Paste text</span>
                 </Tile>
@@ -395,7 +395,7 @@ function Intro({ className = "" }: { className?: string }) {
         Every receipt buys you <span className="accent-serif text-[1.12em] text-accent-deep">a piece of the company.</span>
       </h1>
       <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
-        SERV Reasoning works out who actually profits from each thing you bought, applies <em>your</em> rules, and an agent wallet buys
+        SERV Reasoning works out who actually profits from each thing you bought, applies <em className="pr-[0.15em]">your</em> rules, and an agent wallet buys
         a sliver of those companies as stock tokens on Robinhood Chain.
       </p>
     </div>
@@ -1124,7 +1124,7 @@ function Tile({ children, onClick, disabled, active, highlight }: { children: Re
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`tile flex aspect-[1/1.05] min-w-0 flex-col items-start justify-between rounded-2xl p-3 text-left transition hover:-translate-y-0.5 disabled:opacity-50 ${
+      className={`tile flex min-h-[120px] min-w-0 flex-col sm:aspect-[1/1.05] sm:min-h-0 items-start justify-between rounded-2xl p-3 text-left transition hover:-translate-y-0.5 disabled:opacity-50 ${
         active ? "ring-2 ring-accent/60" : ""
       } ${highlight ? "ring-1 ring-mint/60" : ""}`}
     >
