@@ -1,0 +1,12 @@
+{
+  "name": "stockback-reel",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "puppeteer-core": "^23.11.1"
+  }
+}
