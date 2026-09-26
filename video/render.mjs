@@ -47,7 +47,13 @@ function encoder(file) {
   return ff;
 }
 
-if (args.includes("--stills")) {
+if (args.includes("--audio")) {
+  const { browser, page } = await openPage();
+  const res = await page.evaluate(() => window.renderAudio());
+  writeFileSync(path.join(out, "score.wav"), Buffer.from(res.wav, "base64"));
+  console.log("score.wav written, pre-normalise peak", res.peak.toFixed(3));
+  await browser.close();
+} else if (args.includes("--stills")) {
   const { browser, page } = await openPage();
   for (const t of arg("--stills", "0").split(",").map(Number)) {
     writeFileSync(path.join(out, `still-${t.toFixed(2)}.png`), await shot(page, Math.round(t * 60)));
@@ -84,7 +90,13 @@ if (args.includes("--stills")) {
   );
   const list = path.join(out, "segs.txt");
   writeFileSync(list, segs.filter(Boolean).map((s) => `file '${s}'`).join("\n"));
-  await new Promise((r) => spawn(FF, ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", "-movflags", "+faststart", file], { stdio: "inherit" }).on("close", r));
+  const score = path.join(out, "score.wav");
+  const withAudio = args.includes("--with-audio");
+  const concatArgs = ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", list];
+  if (withAudio) concatArgs.push("-i", score, "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-shortest");
+  else concatArgs.push("-c", "copy");
+  concatArgs.push("-movflags", "+faststart", file);
+  await new Promise((r) => spawn(FF, concatArgs, { stdio: "inherit" }).on("close", r));
   segs.forEach((s) => s && rmSync(s));
   rmSync(list);
   console.log("wrote", file, `${((Date.now() - started) / 1000).toFixed(0)}s`);
