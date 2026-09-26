@@ -6,7 +6,7 @@ A Costco run turns into a piece of Apple, Costco and Celsius. A Lagos supermarke
 
 Built for the [OpenServ SERV Hackathon](https://www.openserv.ai/hackathon), Edition 01.
 
-- **Live app:** _link added after deploy_
+- **Live app:** https://stockback.up.railway.app
 - **Agent wallet (Robinhood Chain mainnet):** [`0xFd0687766F839a976690a83781339d219E866fE2`](https://robinhoodchain.blockscout.com/address/0xFd0687766F839a976690a83781339d219E866fE2)
 
 ## Why this exists
