@@ -1,0 +1,601 @@
+{
+"AAOI": {
+"fit": "cover"
+},
+"AAPL": {
+"fit": "cover"
+},
+"ABCL": {
+"fit": "cover"
+},
+"ADBE": {
+"fit": "cover"
+},
+"AEHR": {
+"fit": "cover"
+},
+"AEIS": {
+"fit": "cover"
+},
+"ALAB": {
+"fit": "cover"
+},
+"AMAT": {
+"fit": "cover"
+},
+"AMBA": {
+"fit": "cover"
+},
+"AMC": {
+"fit": "cover"
+},
+"AMD": {
+"fit": "cover"
+},
+"AMKR": {
+"fit": "cover"
+},
+"AMZN": {
+"fit": "cover"
+},
+"ANET": {
+"fit": "cover"
+},
+"APLD": {
+"fit": "cover"
+},
+"APP": {
+"fit": "cover"
+},
+"ASML": {
+"fit": "cover"
+},
+"ASTS": {
+"fit": "cover"
+},
+"AUR": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"AVAV": {
+"fit": "cover"
+},
+"AVGO": {
+"fit": "cover"
+},
+"AXON": {
+"fit": "cover"
+},
+"AXTI": {
+"fit": "cover"
+},
+"BA": {
+"fit": "cover"
+},
+"BABA": {
+"fit": "cover"
+},
+"BB": {
+"fit": "cover"
+},
+"BE": {
+"fit": "cover"
+},
+"BND": {
+"fit": "cover"
+},
+"BULL": {
+"fit": "cover"
+},
+"CBRS": {
+"fit": "cover"
+},
+"CCL": {
+"fit": "cover"
+},
+"CEG": {
+"fit": "cover"
+},
+"CELH": {
+"fit": "cover"
+},
+"CIEN": {
+"fit": "cover"
+},
+"CLOV": {
+"fit": "cover"
+},
+"CLS": {
+"fit": "cover"
+},
+"CLSK": {
+"fit": "cover"
+},
+"COHR": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"COIN": {
+"fit": "cover"
+},
+"COST": {
+"fit": "cover"
+},
+"CRCL": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"CRDO": {
+"fit": "cover"
+},
+"CRM": {
+"fit": "cover"
+},
+"CRWD": {
+"fit": "cover"
+},
+"CRWV": {
+"fit": "cover"
+},
+"CSCO": {
+"fit": "cover"
+},
+"CTSH": {
+"fit": "cover"
+},
+"CVNA": {
+"fit": "cover"
+},
+"DDOG": {
+"fit": "cover"
+},
+"DELL": {
+"fit": "cover"
+},
+"DJT": {
+"fit": "cover"
+},
+"DOCN": {
+"fit": "cover"
+},
+"ELF": {
+"fit": "cover"
+},
+"EWT": {
+"fit": "cover"
+},
+"EWY": {
+"fit": "cover"
+},
+"F": {
+"fit": "cover"
+},
+"FICO": {
+"fit": "cover"
+},
+"FIG": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"FISV": {
+"fit": "cover"
+},
+"FIX": {
+"fit": "cover"
+},
+"FLNC": {
+"fit": "cover"
+},
+"FLY": {
+"fit": "cover"
+},
+"FTNT": {
+"fit": "cover"
+},
+"FUTU": {
+"fit": "cover"
+},
+"GE": {
+"fit": "cover"
+},
+"GEV": {
+"fit": "cover"
+},
+"GLD": {
+"fit": "cover"
+},
+"GLW": {
+"fit": "cover"
+},
+"GLXY": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"GME": {
+"fit": "cover"
+},
+"GOOGL": {
+"fit": "cover"
+},
+"HII": {
+"fit": "cover"
+},
+"HIMS": {
+"fit": "cover"
+},
+"HPE": {
+"fit": "cover"
+},
+"HWM": {
+"fit": "cover"
+},
+"IBM": {
+"fit": "cover"
+},
+"IBRX": {
+"fit": "cover"
+},
+"INDA": {
+"fit": "cover"
+},
+"INFQ": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"INOD": {
+"fit": "cover"
+},
+"INTC": {
+"fit": "cover"
+},
+"INTU": {
+"fit": "cover"
+},
+"IONQ": {
+"fit": "cover"
+},
+"IREN": {
+"fit": "cover"
+},
+"JBL": {
+"fit": "cover"
+},
+"JNJ": {
+"fit": "cover"
+},
+"JOBY": {
+"fit": "cover"
+},
+"KLAC": {
+"fit": "cover"
+},
+"KSS": {
+"fit": "cover"
+},
+"KTOS": {
+"fit": "cover"
+},
+"LHX": {
+"fit": "cover"
+},
+"LITE": {
+"fit": "cover"
+},
+"LLY": {
+"fit": "cover"
+},
+"LMT": {
+"fit": "cover"
+},
+"LRCX": {
+"fit": "cover"
+},
+"LULU": {
+"fit": "cover"
+},
+"LUNR": {
+"fit": "cover"
+},
+"MDB": {
+"fit": "cover"
+},
+"META": {
+"fit": "cover"
+},
+"MOD": {
+"fit": "cover"
+},
+"MPWR": {
+"fit": "cover"
+},
+"MRNA": {
+"fit": "cover"
+},
+"MRVL": {
+"bg": "#0f0f14",
+"fit": "contain"
+},
+"MSFT": {
+"fit": "cover"
+},
+"MSTR": {
+"fit": "cover"
+},
+"MTSI": {
+"fit": "cover"
+},
+"MU": {
+"fit": "cover"
+},
+"MXL": {
+"fit": "cover"
+},
+"NAVN": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"NBIS": {
+"fit": "cover"
+},
+"NET": {
+"fit": "cover"
+},
+"NFLX": {
+"fit": "cover"
+},
+"NNE": {
+"fit": "cover"
+},
+"NOW": {
+"fit": "cover"
+},
+"NU": {
+"fit": "cover"
+},
+"NVDA": {
+"fit": "cover"
+},
+"NVTS": {
+"fit": "cover"
+},
+"OKLO": {
+"fit": "cover"
+},
+"ON": {
+"fit": "cover"
+},
+"ONTO": {
+"fit": "cover"
+},
+"ORCL": {
+"fit": "cover"
+},
+"OUST": {
+"fit": "cover"
+},
+"P": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"PANW": {
+"fit": "cover"
+},
+"PATH": {
+"fit": "cover"
+},
+"PENG": {
+"fit": "cover"
+},
+"PFE": {
+"fit": "cover"
+},
+"PL": {
+"fit": "cover"
+},
+"PLTR": {
+"fit": "cover"
+},
+"POET": {
+"fit": "cover"
+},
+"POWL": {
+"fit": "cover"
+},
+"PR": {
+"fit": "cover"
+},
+"PWR": {
+"fit": "cover"
+},
+"QBTS": {
+"fit": "cover"
+},
+"QCOM": {
+"fit": "cover"
+},
+"QNT": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"QQQ": {
+"fit": "cover"
+},
+"QUBT": {
+"fit": "cover"
+},
+"RBLX": {
+"fit": "cover"
+},
+"RCAT": {
+"fit": "cover"
+},
+"RDDT": {
+"fit": "cover"
+},
+"RDW": {
+"fit": "cover"
+},
+"RGTI": {
+"fit": "cover"
+},
+"RIVN": {
+"fit": "cover"
+},
+"RKLB": {
+"fit": "cover"
+},
+"RUN": {
+"fit": "cover"
+},
+"SATS": {
+"fit": "cover"
+},
+"SCHD": {
+"fit": "cover"
+},
+"SGOV": {
+"fit": "cover"
+},
+"SHOP": {
+"fit": "cover"
+},
+"SHY": {
+"fit": "cover"
+},
+"SIMO": {
+"fit": "cover"
+},
+"SKHY": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"SLS": {
+"fit": "cover"
+},
+"SLV": {
+"fit": "cover"
+},
+"SMCI": {
+"fit": "cover"
+},
+"SMH": {
+"fit": "cover"
+},
+"SMR": {
+"fit": "cover"
+},
+"SNAP": {
+"fit": "cover"
+},
+"SNDK": {
+"fit": "cover"
+},
+"SNOW": {
+"fit": "cover"
+},
+"SOFI": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"SOUN": {
+"fit": "cover"
+},
+"SOXX": {
+"fit": "cover"
+},
+"SPCX": {
+"fit": "cover"
+},
+"SPMO": {
+"fit": "cover"
+},
+"SPY": {
+"fit": "cover"
+},
+"TE": {
+"fit": "cover"
+},
+"TEAM": {
+"fit": "cover"
+},
+"TEM": {
+"fit": "cover"
+},
+"TER": {
+"fit": "cover"
+},
+"TSEM": {
+"fit": "cover"
+},
+"TSLA": {
+"fit": "cover"
+},
+"TSM": {
+"fit": "cover"
+},
+"TTD": {
+"fit": "cover"
+},
+"TTWO": {
+"fit": "cover"
+},
+"UMC": {
+"fit": "cover"
+},
+"UNH": {
+"fit": "cover"
+},
+"UPS": {
+"fit": "cover"
+},
+"USAR": {
+"fit": "cover"
+},
+"USO": {
+"fit": "cover"
+},
+"VICR": {
+"fit": "cover"
+},
+"VRT": {
+"fit": "cover"
+},
+"VSAT": {
+"fit": "cover"
+},
+"VST": {
+"fit": "cover"
+},
+"VTI": {
+"fit": "cover"
+},
+"WDAY": {
+"fit": "cover"
+},
+"WDC": {
+"fit": "cover"
+},
+"WULF": {
+"fit": "cover"
+},
+"WYFI": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"XLK": {
+"fit": "cover"
+},
+"XNDU": {
+"bg": "#ffffff",
+"fit": "contain"
+},
+"XOM": {
+"fit": "cover"
+},
+"ZM": {
+"fit": "cover"
+},
+"ZS": {
+"fit": "cover"
+}
+}

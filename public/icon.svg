@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#0a0212"/><path d="M17 11h30v40l-5-3.5-5 3.5-5-3.5-5 3.5-5-3.5-5 3.5z" fill="#fff"/><rect x="22" y="33" width="5" height="8" rx="1.5" fill="#6569d2"/><rect x="29.5" y="27" width="5" height="14" rx="1.5" fill="#6569d2"/><rect x="37" y="19" width="5" height="22" rx="1.5" fill="#5ecba1"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="sb-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#231a44"/><stop offset=".55" stop-color="#110a24"/><stop offset="1" stop-color="#0a0212"/></linearGradient>
+    <radialGradient id="sb-glow" cx=".2" cy=".15" r=".75"><stop offset="0" stop-color="#6569d2" stop-opacity=".55"/><stop offset="1" stop-color="#6569d2" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sb-paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6e8fb"/></linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#sb-bg)"/>
+  <rect width="64" height="64" rx="15" fill="url(#sb-glow)"/>
+  <g transform="rotate(-5 32 30) translate(0 3)">
+    <path d="M17.5 12.5a3.5 3.5 0 0 1 3.5-3.5h20a3.5 3.5 0 0 1 3.5 3.5v16.6l-5 5-4.8-3.5-5.6 7.3-4.9-3.6-6.7 8.6z" fill="url(#sb-paper)"/>
+    <rect x="22.5" y="15" width="11" height="3.2" rx="1.6" fill="#6569d2"/>
+    <rect x="22.5" y="21.2" width="16" height="2.5" rx="1.25" fill="#0a0212" opacity=".14"/>
+    <rect x="22.5" y="26.2" width="9" height="2.5" rx="1.25" fill="#0a0212" opacity=".14"/>
+  </g>
+  <g transform="rotate(-5 32 30) translate(0 3)" fill="none" stroke="#5ecba1" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17.5 42.9l6.7-8.6 4.9 3.6 5.6-7.3 4.8 3.5 5-5 7.2-7.3"/>
+    <path d="M44.9 21.8h6.8v6.8"/>
+  </g>
+</svg>

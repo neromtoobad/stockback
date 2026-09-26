@@ -8,6 +8,7 @@ import type { Mapping, Plan, Receipt } from "@/lib/pipeline";
 import type { ServTrace } from "@/lib/serv";
 import type { Run, Fill } from "@/lib/store";
 import TOKENS from "@/data/rh-tokens.json";
+import LOGOS from "@/data/logos.json";
 
 const DEFAULT_RULES = `Give me 2% back in stock on every receipt.
 Skip alcohol, tobacco and gambling purchases.
@@ -16,6 +17,7 @@ If the company isn't available, put it in VTI.
 Never more than $1 per receipt.`;
 
 const tokenInfo = new Map((TOKENS as { symbol: string; name: string; address: string }[]).map((t) => [t.symbol, t]));
+const logoMeta = LOGOS as Record<string, { fit: "cover" | "contain"; bg?: string }>;
 const EXPLORER = "https://robinhoodchain.blockscout.com";
 const AGENT_ADDRESS = process.env.NEXT_PUBLIC_AGENT_ADDRESS ?? "";
 
@@ -352,8 +354,10 @@ function TopBar() {
     <header className="flex items-center gap-4 bg-ink px-4 py-4 text-white sm:px-7 sm:py-5">
       <Link href="/" className="flex shrink-0 items-center gap-2.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/icon.svg" alt="" className="h-9 w-9" />
-        <span className="text-xl font-bold tracking-tight">stockback</span>
+        <img src="/icon.svg" alt="" className="h-10 w-10" />
+        <span className="text-[22px] font-bold tracking-[-0.03em]">
+          stock<span className="accent-serif text-[1.12em] text-[#b7baf5]">back</span>
+        </span>
       </Link>
       <div className="relative mx-2 hidden min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)] md:block">
         <div className="marquee flex w-max gap-8 text-[13px] whitespace-nowrap">
@@ -528,7 +532,8 @@ function WalletCard({ pocket }: { pocket: PocketData | null }) {
       {wallet?.holdings.length ? (
         <div className="mt-3 flex flex-wrap gap-1.5">
           {wallet.holdings.map((h) => (
-            <span key={h.ticker} className="rounded-full bg-white/10 px-2.5 py-1 font-mono text-[11px]">
+            <span key={h.ticker} className="inline-flex items-center gap-1.5 rounded-full bg-white/10 py-1 pr-2.5 pl-1 font-mono text-[11px]">
+              <TickerLogo t={h.ticker} size={18} />
               {h.units.toPrecision(3)} {h.ticker}
             </span>
           ))}
@@ -538,8 +543,9 @@ function WalletCard({ pocket }: { pocket: PocketData | null }) {
         <ul className="mt-4 divide-y divide-white/10 text-sm">
           {fills.slice(0, 6).map((f, i) => (
             <li key={`${f.tx_hash}-${i}`} className="flex items-center justify-between gap-3 py-2">
-              <span className="min-w-0 truncate">
-                <b>{f.ticker}</b> <span className="text-white/50">from {f.merchant}</span>
+              <span className="flex min-w-0 items-center gap-2 truncate">
+                <TickerLogo t={f.ticker} size={22} />
+                <b>{f.ticker}</b> <span className="truncate text-white/50">from {f.merchant}</span>
               </span>
               <a className="shrink-0 font-mono text-[11px] text-mint underline-offset-2 hover:underline" href={`${EXPLORER}/tx/${f.tx_hash}`} target="_blank" rel="noreferrer">
                 {usd(f.usd, 2)} · tx ↗
@@ -669,7 +675,7 @@ function PocketCard({ pocket, ruleSummary }: { pocket: PocketData | null; ruleSu
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {holdings.map((h) => (
                   <div key={h.ticker} className="tile flex items-center gap-3 rounded-2xl p-3">
-                    <Mono t={h.ticker} size={38} />
+                    <TickerLogo t={h.ticker} size={38} />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-baseline justify-between gap-2">
                         <span className="font-bold">{h.ticker}</span>
@@ -702,7 +708,7 @@ function PocketCard({ pocket, ruleSummary }: { pocket: PocketData | null; ruleSu
                         <span className="flex -space-x-1.5">
                           {r.fills.slice(0, 4).map((f) => (
                             <span key={f.ticker} className="rounded-full ring-2 ring-white">
-                              <Mono t={f.ticker} size={22} />
+                              <TickerLogo t={f.ticker} size={22} />
                             </span>
                           ))}
                         </span>
@@ -840,7 +846,27 @@ function hue(t: string) {
   return h;
 }
 
-export function Mono({ t, size = 36 }: { t: string; size?: number }) {
+export function TickerLogo({ t, size = 36 }: { t: string; size?: number }) {
+  const meta = logoMeta[t];
+  if (meta) {
+    return (
+      <span
+        aria-hidden
+        className="inline-flex shrink-0 overflow-hidden rounded-full ring-1 ring-black/[0.06]"
+        style={{ width: size, height: size, background: meta.bg ?? "#fff" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/logos/${t}.png`}
+          alt=""
+          width={size}
+          height={size}
+          loading="lazy"
+          className={meta.fit === "cover" ? "h-full w-full object-cover" : "h-full w-full object-contain p-[14%]"}
+        />
+      </span>
+    );
+  }
   return (
     <span
       aria-hidden
@@ -860,7 +886,7 @@ export function Mono({ t, size = 36 }: { t: string; size?: number }) {
 export function TickerChip({ t, muted }: { t: string; muted?: boolean }) {
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-full py-0.5 pr-2 pl-0.5 font-mono text-xs font-bold ${muted ? "bg-chip text-muted" : "bg-ink text-white"}`}>
-      <span className="h-4 w-4 rounded-full" style={{ background: `hsl(${hue(t)} 60% 55%)` }} />
+      <TickerLogo t={t} size={16} />
       {t}
     </span>
   );
@@ -868,7 +894,7 @@ export function TickerChip({ t, muted }: { t: string; muted?: boolean }) {
 
 export function MapResult({ mapping, receipt }: { mapping: Mapping; receipt: Receipt }) {
   const rows = [
-    { label: receipt.merchant || "Store", kind: "store", o: mapping.merchant },
+    ...(mapping.merchant.owner_company || mapping.merchant.rh_ticker !== "NONE" ? [{ label: receipt.merchant || "Store", kind: "store", o: mapping.merchant }] : []),
     ...(mapping.platform.owner_company ? [{ label: receipt.payment_method || "Platform", kind: "platform", o: mapping.platform }] : []),
     ...mapping.items.map((m) => ({ label: receipt.items[m.item_index]?.description ?? m.brand, kind: m.brand || "unbranded", o: m })),
   ];
@@ -993,7 +1019,7 @@ export function FillRow({ f }: { f: Fill }) {
   const info = tokenInfo.get(f.ticker);
   return (
     <li className="tile flex items-center gap-3 rounded-2xl p-3">
-      <Mono t={f.ticker} />
+      <TickerLogo t={f.ticker} />
       <div className="min-w-0 flex-1">
         <div className="flex items-baseline justify-between gap-2">
           <span className="font-bold">
@@ -1112,7 +1138,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line px-4 py-6 text-xs text-muted sm:px-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span>Stockback · built on SERV Reasoning for the OpenServ SERV Hackathon</span>
+        <span>Stockback · built on SERV Reasoning for the OpenServ SERV Hackathon · company logos via Parqet</span>
         <span>Stock tokens aren&apos;t available to US persons and some other regions. Not investment advice. Demo brand boosts are illustrative.</span>
       </div>
     </footer>

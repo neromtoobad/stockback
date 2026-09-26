@@ -1,6 +1,6 @@
 // End-to-end smoke test against a deployed Stockback: read → map → plan → execute (simulated).
 const base = process.argv[2] ?? "https://web-production-53b74.up.railway.app";
-const text = `CARD STATEMENT - SEPTEMBER
+const text = process.argv[3] ?? `CARD STATEMENT - SEPTEMBER
 09/01 NETFLIX.COM          15.49
 09/02 GOOGLE*YOUTUBEPREM   13.99
 09/03 MICROSOFT*365 PERS    9.99
