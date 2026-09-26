@@ -101,3 +101,5 @@ if (args.includes("--audio")) {
   rmSync(list);
   console.log("wrote", file, `${((Date.now() - started) / 1000).toFixed(0)}s`);
 }
+
+process.exit(0);
