@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getRun } from "@/lib/store";
@@ -52,9 +53,9 @@ export default async function RunPage({ params }: Props) {
             {run.traces?.length ? <Trace traces={run.traces} /> : null}
           </div>
         </div>
-        <a href="/" className="block rounded-2xl bg-ink px-4 py-3.5 text-center font-bold text-white">
+        <Link href="/" className="block rounded-2xl bg-ink px-4 py-3.5 text-center font-bold text-white">
           Scan your own receipt →
-        </a>
+        </Link>
       </main>
     </Frame>
   );

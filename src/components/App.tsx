@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SAMPLES, type Sample } from "@/lib/samples";
 import { sampleToJpeg, fileToJpeg } from "@/components/receipt-image";
@@ -350,11 +351,11 @@ function TopBar() {
   const items = tape.length ? [...tape, ...tape] : [];
   return (
     <header className="flex items-center gap-4 bg-ink px-4 py-4 text-white sm:px-7 sm:py-5">
-      <a href="/" className="flex shrink-0 items-center gap-2.5">
+      <Link href="/" className="flex shrink-0 items-center gap-2.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icon.svg" alt="" className="h-9 w-9" />
         <span className="text-xl font-extrabold tracking-tight">stockback</span>
-      </a>
+      </Link>
       <div className="relative mx-2 hidden min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)] md:block">
         <div className="marquee flex w-max gap-8 text-[13px] whitespace-nowrap">
           {items.map((t, i) => (
@@ -368,12 +369,12 @@ function TopBar() {
         </div>
       </div>
       <nav className="ml-auto flex shrink-0 items-center gap-2 text-sm sm:gap-4">
-        <a href="/#pocket" className="hidden text-white/80 hover:text-white sm:inline">
+        <Link href="/#pocket" className="hidden text-white/80 hover:text-white sm:inline">
           Pocket
-        </a>
-        <a href="/#how" className="hidden text-white/80 hover:text-white sm:inline">
+        </Link>
+        <Link href="/#how" className="hidden text-white/80 hover:text-white sm:inline">
           How it works
-        </a>
+        </Link>
         <a
           href={`${EXPLORER}/address/${AGENT_ADDRESS}`}
           target="_blank"
