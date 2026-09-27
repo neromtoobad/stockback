@@ -28,7 +28,11 @@ flowchart LR
 2. **Trace who profits.** For the store, the checkout platform and every line item, SERV walks brand → ultimate parent → ticker (Doritos → PepsiCo, YouTube Premium → Alphabet, Kirkland → Costco, Shop Pay → Shopify). The output field is an **enum of the 178 companies that actually exist as Robinhood Chain stock tokens**, so it cannot invent a ticker. `serv_shadow_agent` re-validates every ownership claim before the answer is returned.
 3. **Apply your rules.** You write rules in plain English ("2% back, skip alcohol, no oil or weapons companies, fallback to VTI, max $1 per receipt"). A `-serv-multipath` model turns them into parameters and per-item and per-company decisions. It does **no arithmetic**.
 4. **Do the math in code.** The attribution waterfall (brand owner → store → platform → fallback fund), brand boosts, the cap and the fee are deterministic TypeScript in `src/lib/pipeline.ts#computePlan`.
-5. **Buy.** The agent wallet, a Coinbase AgentKit `ViemWalletProvider` on Robinhood Chain (chain 4663), swaps into the stock tokens. Public visitors get a simulated fill at the live Robinhood token price (with an on-chain quote where a pool exists). The owner's scans execute for real, in tiny amounts, and link to the explorer.
+5. **Buy.** Each visitor can create **their own agent wallet**, a Coinbase AgentKit `ViemWalletProvider` on Robinhood Chain (chain 4663).
+   - **Fund:** top it up with a few dollars of ETH. The card deep-links to Relay with the address pre-filled.
+   - **Buy:** every receipt they scan then buys its stock tokens live from that wallet, one basket transaction per receipt. Each receipt is capped at $1 and by the wallet's balance.
+   - **Withdraw:** sends every stock token and the leftover ETH to the user's own address.
+   - **Without a funded wallet:** scans are simulated at live on-chain quotes.
 
 This split follows SERV's own "Day One" guidance: judgment goes to SERV, while exact work (FX, math, caps, money movement) goes to code.
 
@@ -68,13 +72,15 @@ npm run dev            # http://localhost:3000
 | `AGENT_PRIVATE_KEY` / `AGENT_ADDRESS` | agent wallet on Robinhood Chain |
 | `RH_RPC_URL` | default `https://rpc.mainnet.chain.robinhood.com` |
 | `LIVE_PASSCODE` | owner passcode for live buys (`/?live=…`) |
-| `LIVE_MAX_USD_PER_RECEIPT` | live spend cap per receipt, default 0.25 |
+| `LIVE_MAX_USD_PER_RECEIPT` | owner demo-wallet cap per receipt, default 0.25 |
+| `WALLET_ENC_KEY` | 32-byte base64 key that encrypts per-user agent wallet keys |
+| `USER_MAX_USD_PER_RECEIPT` | per-user live cap per receipt, default 1.00 |
 | `DATABASE_URL` | Postgres; falls back to `.data/runs.json` |
 
 ## Honest limits
 
 - Robinhood Chain lists 195 tokens, mostly tech, so many consumer brands (Coca-Cola, PepsiCo, Starbucks) aren't available yet. Those purchases go to the store's parent or your fallback fund, and the app says so.
-- Live buys come from one demo agent wallet funded with about $1, so they are tiny. Per-user wallets are the obvious next step.
+- Agent wallets are custodial in this demo. Keys are generated server-side, encrypted with AES-256-GCM (`WALLET_ENC_KEY`) and tied to the browser's pocket cookie, so use small amounts. Production would move keys to Coinbase CDP server wallets, or give each user a smart account with a spending limit so the agent can only buy stock tokens.
 - Stock tokens are not available to US persons and some other regions. Nothing here is investment advice.
 
 ## Credits
