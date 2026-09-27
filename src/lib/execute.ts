@@ -5,10 +5,16 @@ import { quotesFor } from "@/lib/prices";
 import { token } from "@/lib/tokens";
 import { saveRun, type Fill, type Run } from "@/lib/store";
 import { onchainBuyAll, onchainQuote } from "@/lib/rh/bridge";
+import { getPocketWallet, pocketSigner, spendableUsd } from "@/lib/wallets";
 
-// Live buys spend the real agent wallet, so they need the owner's passcode and stay tiny.
+// Two ways a buy goes live:
+//  - "pocket": the visitor has created and funded their own agent wallet; it buys from their ETH,
+//    capped per receipt (USER_MAX_USD_PER_RECEIPT) and by what the wallet can actually spend.
+//  - "house": the owner's passcode spends the demo agent wallet, in tiny amounts.
+// Everything else is simulated at live on-chain quotes.
 const LIVE_PASSCODE = process.env.LIVE_PASSCODE ?? "";
 const LIVE_MAX_USD = Number(process.env.LIVE_MAX_USD_PER_RECEIPT ?? "0.30");
+const USER_MAX_USD = Number(process.env.USER_MAX_USD_PER_RECEIPT ?? "1.00");
 // Below this a leg costs more in gas than it buys, so it stays simulated.
 const LIVE_MIN_LEG_USD = 0.05;
 
@@ -24,7 +30,13 @@ export async function executePlan(args: {
   traces: ServTrace[];
   live: boolean;
 }): Promise<Run> {
-  const { plan, live } = args;
+  const { plan } = args;
+  // Prefer the visitor's own funded wallet; fall back to the house wallet in owner mode.
+  const wallet = await getPocketWallet(args.pocket).catch(() => null);
+  const walletBudget = wallet ? await spendableUsd(wallet.address).catch(() => 0) : 0;
+  const source: "pocket" | "house" | null = wallet && walletBudget >= 0.1 ? "pocket" : args.live ? "house" : null;
+  const live = source !== null;
+  const maxUsd = source === "pocket" ? Math.min(USER_MAX_USD, walletBudget) : LIVE_MAX_USD;
   const id = randomUUID();
   const buys = plan.buys.filter((b) => token(b.ticker) && b.usd > 0);
   const quotes = await quotesFor(buys.map((b) => b.ticker)).catch(() => ({}) as Awaited<ReturnType<typeof quotesFor>>);
@@ -36,9 +48,10 @@ export async function executePlan(args: {
 
   // Scale live spend down to the demo budget; the plan itself is untouched.
   const planned = buys.reduce((s, b) => s + b.usd, 0);
-  const scale = live && planned > LIVE_MAX_USD ? LIVE_MAX_USD / planned : 1;
+  const scale = live && planned > maxUsd ? maxUsd / planned : 1;
   const liveLegs = live ? buys.filter((b) => b.usd * scale >= LIVE_MIN_LEG_USD).map((b) => ({ ticker: b.ticker, usd: round4(b.usd * scale) })) : [];
-  const liveResults = liveLegs.length ? await onchainBuyAll(liveLegs, id) : [];
+  const signer = source === "pocket" ? (await pocketSigner(args.pocket)) ?? undefined : undefined;
+  const liveResults = liveLegs.length ? await onchainBuyAll(liveLegs, id, signer) : [];
 
   const fills: Fill[] = await Promise.all(
     buys.map(async (b) => {
@@ -75,6 +88,8 @@ export async function executePlan(args: {
     plan,
     traces: args.traces,
     flagged: args.receipt.unusual_text,
+    wallet: source === "pocket" ? wallet!.address : source === "house" ? process.env.AGENT_ADDRESS : undefined,
+    source: source ?? "simulated",
   };
   await saveRun(run);
   return run;

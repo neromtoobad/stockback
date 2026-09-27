@@ -32,6 +32,8 @@ export type Run = {
   plan: Plan;
   traces: ServTrace[];
   flagged: string;
+  wallet?: string;
+  source?: "pocket" | "house" | "simulated";
 };
 
 // Postgres when DATABASE_URL is set (Railway), otherwise a JSON file for local dev.
@@ -111,4 +113,46 @@ export async function getRun(id: string): Promise<Run | null> {
     return rows[0]?.data ?? null;
   }
   return readFile().find((r) => r.id === id) ?? null;
+}
+
+/* ---------------- per-pocket agent wallets ---------------- */
+export type WalletRow = { pocket: string; address: string; enc_key: string; created_at: string };
+let walletsReady: Promise<void> | null = null;
+function initWallets() {
+  if (!sql) return Promise.resolve();
+  walletsReady ??= sql`
+    create table if not exists wallets (
+      pocket text primary key,
+      address text not null unique,
+      enc_key text not null,
+      created_at timestamptz not null default now()
+    )`.then(() => undefined);
+  return walletsReady;
+}
+const WFILE = path.join(process.cwd(), ".data", "wallets.json");
+const readWallets = (): WalletRow[] => (existsSync(WFILE) ? (JSON.parse(readFileSync(WFILE, "utf8")) as WalletRow[]) : []);
+
+export async function getWalletRow(pocket: string): Promise<WalletRow | null> {
+  if (sql) {
+    await initWallets();
+    const rows = await sql<WalletRow[]>`select pocket, address, enc_key, created_at::text as created_at from wallets where pocket = ${pocket}`;
+    return rows[0] ?? null;
+  }
+  return readWallets().find((w) => w.pocket === pocket) ?? null;
+}
+
+export async function insertWalletRow(row: WalletRow): Promise<WalletRow> {
+  if (sql) {
+    await initWallets();
+    // first writer wins, so two tabs creating at once end up with the same wallet
+    await sql`insert into wallets (pocket, address, enc_key) values (${row.pocket}, ${row.address}, ${row.enc_key}) on conflict (pocket) do nothing`;
+    return (await getWalletRow(row.pocket))!;
+  }
+  mkdirSync(path.dirname(WFILE), { recursive: true });
+  const all = readWallets();
+  const existing = all.find((w) => w.pocket === row.pocket);
+  if (existing) return existing;
+  all.push(row);
+  writeFileSync(WFILE, JSON.stringify(all, null, 1));
+  return row;
 }

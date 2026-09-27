@@ -3,6 +3,7 @@ import type { Address } from "viem";
 import { formatUnits } from "viem";
 import {
   agentAddress,
+  type BuySigner,
   executeBasket,
   executeBuy,
   findStockToken,
@@ -32,7 +33,7 @@ export type LiveResult = {
 
 // Buys every leg it can from the agent wallet: ETH-input Uniswap v3 legs go into one
 // multicall basket transaction; anything else is sent on its own.
-export async function onchainBuyAll(legs: LiveLeg[], key: string): Promise<LiveResult[]> {
+export async function onchainBuyAll(legs: LiveLeg[], key: string, signer?: BuySigner): Promise<LiveResult[]> {
   const quoted = await Promise.all(
     legs.map(async (leg) => {
       const t = await findStockToken(leg.ticker);
@@ -51,7 +52,7 @@ export async function onchainBuyAll(legs: LiveLeg[], key: string): Promise<LiveR
 
   if (basket.length > 1) {
     try {
-      const r = await executeBasket({ quotes: basket.map((x) => x.q), slippageBps: SLIPPAGE_BPS, idempotencyKey: `${key}:basket` });
+      const r = await executeBasket({ quotes: basket.map((x) => x.q), slippageBps: SLIPPAGE_BPS, idempotencyKey: `${key}:basket`, signer });
       for (const x of basket) {
         const leg = r.legs.find((l) => l.symbol === x.q.symbol);
         results.push({
@@ -70,7 +71,7 @@ export async function onchainBuyAll(legs: LiveLeg[], key: string): Promise<LiveR
 
   for (const x of single) {
     try {
-      const r = await executeBuy({ quote: x.q, slippageBps: SLIPPAGE_BPS, idempotencyKey: `${key}:${x.q.symbol}` });
+      const r = await executeBuy({ quote: x.q, slippageBps: SLIPPAGE_BPS, idempotencyKey: `${key}:${x.q.symbol}`, signer });
       results.push({ ticker: x.leg.ticker, txHash: r.txHash, route: x.q.route, units: r.amountOut !== undefined ? toShares(r.amountOut, x.q) : x.q.expectedOutShares });
     } catch (err) {
       results.push({ ticker: x.leg.ticker, route: x.q.route, error: msg(err) });

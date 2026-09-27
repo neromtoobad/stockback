@@ -36,6 +36,16 @@ type PocketData = {
   stats: { receipts: number; live: number; usd: number };
 };
 type SlimRun = Pick<Run, "id" | "created_at" | "merchant" | "spend_usd" | "total_usd" | "mode" | "fills" | "flagged">;
+type MyWallet = {
+  address: string;
+  eth: number;
+  ethUsd: number;
+  spendable: number;
+  live: boolean;
+  holdings: { ticker: string; units: number; usd: number | null }[];
+  holdingsUsd: number;
+  explorer: string;
+};
 type Wallet = { address: string; eth: number; usdg: number; usd: number; holdings: { ticker: string; units: number; usd: number | null }[] };
 
 async function post<T>(url: string, body: unknown): Promise<T> {
@@ -64,6 +74,22 @@ export default function App() {
   const [pasted, setPasted] = useState("");
   const [pocket, setPocket] = useState<PocketData | null>(null);
   const [passcode, setPasscode] = useState("");
+  const [myWallet, setMyWallet] = useState<MyWallet | null | undefined>(undefined);
+  const loadWallet = useCallback(async () => {
+    try {
+      const res = await fetch("/api/me/wallet", { cache: "no-store" });
+      if (res.ok) setMyWallet((await res.json()).wallet);
+    } catch {}
+  }, []);
+  useEffect(() => {
+    loadWallet();
+  }, [loadWallet]);
+  useEffect(() => {
+    if (!myWallet) return;
+    const every = myWallet.live ? 30_000 : 8_000; // poll faster while waiting for a deposit
+    const id = setInterval(loadWallet, every);
+    return () => clearInterval(id);
+  }, [myWallet, loadWallet]);
   const [elapsed, setElapsed] = useState(0);
   const [activeSample, setActiveSample] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -148,6 +174,7 @@ export default function App() {
       setRun(e.run);
       setPhase("done");
       loadPocket();
+      loadWallet();
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
       setPhase("error");
@@ -186,10 +213,14 @@ export default function App() {
           <section className="glass rounded-[22px] p-5 sm:p-6">
             <div className="flex items-start justify-between">
               <p className="text-xs text-muted">New receipt</p>
-              {passcode ? (
+              {myWallet?.live ? (
+                <a href="#my-wallet" className="rounded-full bg-mint/25 px-2.5 py-1 font-mono text-[10px] font-semibold text-gain">
+                  ● LIVE · YOUR WALLET
+                </a>
+              ) : passcode ? (
                 <button
                   className="rounded-full bg-mint/20 px-2.5 py-1 font-mono text-[10px] font-semibold text-gain"
-                  title="Owner mode: buys go to the real agent wallet (tiny amounts). Click to switch to simulated."
+                  title="Owner mode: buys go to the demo agent wallet (tiny amounts). Click to switch to simulated."
                   onClick={() => {
                     localStorage.removeItem("sb_live");
                     setPasscode("");
@@ -197,7 +228,11 @@ export default function App() {
                 >
                   ● LIVE MODE
                 </button>
-              ) : null}
+              ) : (
+                <a href="#my-wallet" className="rounded-full bg-chip px-2.5 py-1 font-mono text-[10px] font-semibold text-muted hover:text-ink">
+                  SIMULATED · GO LIVE →
+                </a>
+              )}
             </div>
             <div className="mt-2 grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] sm:items-center">
               <div>
@@ -299,6 +334,7 @@ export default function App() {
             />
           )}
 
+          <MyWalletCard wallet={myWallet} reload={loadWallet} />
           <PocketCard pocket={pocket} ruleSummary={ruleSummary} />
           <div className="grid gap-6 xl:grid-cols-2">
             <WalletCard pocket={pocket} />
@@ -512,7 +548,7 @@ function WalletCard({ pocket }: { pocket: PocketData | null }) {
     <section id="wallet" className="scroll-mt-6 rounded-[20px] bg-ink p-5 text-white">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-[11px] text-white/50">Agent wallet · Coinbase AgentKit</p>
+          <p className="text-[11px] text-white/50">Every live buy · Coinbase AgentKit wallets</p>
           <h3 className="mt-1 text-[24px] leading-tight font-bold tracking-[-0.02em]">
             Live on <br className="xl:hidden" />
             <span className="accent-serif text-[1.12em] text-mint">Robinhood Chain</span>
@@ -588,6 +624,186 @@ function MoneyCard() {
           </div>
         ))}
       </div>
+    </section>
+  );
+}
+
+
+/* ============================== your agent wallet ============================== */
+
+const relayLink = (addr: string) =>
+  `https://relay.link/bridge/robinhood?toAddress=${addr}&toCurrency=0x0000000000000000000000000000000000000000&fromChainId=8453&fromCurrency=0x0000000000000000000000000000000000000000&amount=0.001`;
+
+function MyWalletCard({ wallet, reload }: { wallet: MyWallet | null | undefined; reload: () => Promise<void> }) {
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+  const [to, setTo] = useState("");
+  const [result, setResult] = useState<{ to: string; sent: { what: string; url: string }[] } | null>(null);
+
+  async function create() {
+    setBusy(true);
+    setErr(null);
+    try {
+      const res = await fetch("/api/me/wallet", { method: "POST" });
+      if (!res.ok) throw new Error((await res.json()).error ?? "Couldn't create the wallet");
+      await reload();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function connect() {
+    const eth = (window as unknown as { ethereum?: { request: (a: { method: string }) => Promise<string[]> } }).ethereum;
+    if (!eth) return setErr("No browser wallet found. Paste your address instead.");
+    try {
+      const [a] = await eth.request({ method: "eth_requestAccounts" });
+      if (a) setTo(a);
+    } catch {
+      setErr("Wallet connection was cancelled.");
+    }
+  }
+  async function withdraw() {
+    setBusy(true);
+    setErr(null);
+    setResult(null);
+    try {
+      const res = await post<{ to: string; sent: { what: string; url: string }[] }>("/api/me/withdraw", { to });
+      setResult(res);
+      await reload();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <section id="my-wallet" className="glass scroll-mt-6 rounded-[22px] p-5 sm:p-6">
+      <div className="flex items-start justify-between gap-3">
+        <p className="text-xs text-muted">Robinhood Chain · Coinbase AgentKit</p>
+        {wallet ? (
+          <span className={`rounded-full px-2.5 py-1 font-mono text-[10px] font-semibold ${wallet.live ? "bg-mint/25 text-gain" : "bg-chip text-muted"}`}>
+            {wallet.live ? "● LIVE" : "○ WAITING FOR ETH"}
+          </span>
+        ) : null}
+      </div>
+      <h2 className="mt-1 text-[30px] leading-tight font-bold tracking-[-0.025em]">
+        Your agent <span className="accent-serif text-[1.15em] text-accent-deep">wallet</span>
+      </h2>
+
+      {wallet === undefined ? (
+        <p className="mt-3 text-sm text-muted">Loading…</p>
+      ) : wallet === null ? (
+        <div className="mt-3">
+          <p className="max-w-xl text-[15px] leading-relaxed text-muted">
+            Scanning is free and simulated. To buy for real, create your own agent wallet, top it up with a few dollars of ETH on Robinhood Chain,
+            and every receipt you scan buys its stock tokens from it (up to $1 per receipt, within your rules). Withdraw everything to your own
+            wallet any time.
+          </p>
+          <button
+            onClick={create}
+            disabled={busy}
+            className="mt-4 flex h-12 items-center gap-2 rounded-2xl bg-ink px-5 text-[15px] font-semibold text-white disabled:opacity-50"
+          >
+            {busy ? "Creating…" : "Create my agent wallet"} <ArrowIcon small />
+          </button>
+          <p className="mt-3 text-xs text-muted">
+            Demo custody: Stockback keeps this wallet&apos;s key encrypted on its server so the agent can buy for you. It&apos;s tied to this browser. Use
+            small amounts.
+          </p>
+        </div>
+      ) : (
+        <div className="mt-4 grid gap-5 sm:grid-cols-[150px_minmax(0,1fr)]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`/api/me/qr?a=${wallet.address}`} alt="Wallet address QR code" className="tile h-[150px] w-[150px] rounded-2xl p-2" />
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <code className="tile rounded-xl px-3 py-2 font-mono text-[13px] break-all">{wallet.address}</code>
+              <button
+                onClick={() => navigator.clipboard?.writeText(wallet.address).then(() => setCopied(true))}
+                className="tile rounded-full px-3 py-1.5 text-sm font-semibold"
+              >
+                {copied ? "Copied" : "Copy"}
+              </button>
+            </div>
+            <div className="mt-3 flex flex-wrap items-baseline gap-x-5 gap-y-1">
+              <span className="num text-[26px] font-bold tracking-[-0.03em]">{usd(wallet.ethUsd + wallet.holdingsUsd)}</span>
+              <span className="font-mono text-xs text-muted">
+                {wallet.eth.toFixed(6)} ETH · {usd(wallet.spendable)} spendable
+              </span>
+              <a href={wallet.explorer} target="_blank" rel="noreferrer" className="font-mono text-xs text-accent-deep underline-offset-2 hover:underline">
+                explorer ↗
+              </a>
+            </div>
+            {wallet.holdings.length ? (
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {wallet.holdings.map((h) => (
+                  <span key={h.ticker} className="tile inline-flex items-center gap-1.5 rounded-full py-1 pr-2.5 pl-1 font-mono text-[11px]">
+                    <TickerLogo t={h.ticker} size={18} />
+                    {h.units.toPrecision(3)} {h.ticker}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+            {!wallet.live ? (
+              <div className="mt-3">
+                <p className="text-sm text-muted">
+                  Send about $2 of <b className="text-ink">ETH on Robinhood Chain</b> to this address. Relay bridges it from Base or Arbitrum in seconds.
+                  This card turns live on its own once the ETH lands.
+                </p>
+                <a
+                  href={relayLink(wallet.address)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex h-11 items-center gap-2 rounded-2xl bg-accent px-4 text-[15px] font-semibold text-white"
+                >
+                  Fund with Relay <ExternalIcon />
+                </a>
+              </div>
+            ) : (
+              <p className="mt-3 text-sm text-muted">Your next scan buys for real from this wallet: up to $1 per receipt, never more than it holds.</p>
+            )}
+            <div className="mt-4 border-t border-line pt-4">
+              <p className="text-xs text-muted">Withdraw everything (stock tokens + ETH) to your own wallet</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <input
+                  value={to}
+                  onChange={(e) => setTo(e.target.value.trim())}
+                  placeholder="0x… your wallet on Robinhood Chain"
+                  className="tile h-11 min-w-0 flex-1 rounded-xl px-3 font-mono text-[13px] outline-none focus:ring-2 focus:ring-accent/40"
+                />
+                <button onClick={connect} className="tile h-11 rounded-xl px-3 text-sm font-semibold">
+                  Use my wallet
+                </button>
+                <button onClick={withdraw} disabled={busy || !to} className="h-11 rounded-xl bg-ink px-4 text-sm font-semibold text-white disabled:opacity-40">
+                  {busy ? "Sending…" : "Withdraw"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {err && <p className="mt-3 text-sm text-warn">{err}</p>}
+      {result && (
+        <div className="mt-3 text-sm">
+          {result.sent.length ? (
+            <ul className="space-y-1">
+              {result.sent.map((x) => (
+                <li key={x.url}>
+                  Sent {x.what} ·{" "}
+                  <a href={x.url} target="_blank" rel="noreferrer" className="font-mono text-accent-deep underline">
+                    tx ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-muted">Nothing to withdraw yet.</p>
+          )}
+        </div>
+      )}
     </section>
   );
 }
@@ -991,8 +1207,10 @@ export function BuyResult({ run, plan }: { run: Run; plan: Plan }) {
       <p className="text-xs text-muted">
         Stockback fee {usd(plan.fee_usd, 4)} (1%).{" "}
         {run.mode === "simulated"
-          ? "Simulated: priced with a live on-chain Uniswap quote on Robinhood Chain (or Robinhood's token price where no pool exists). No transaction sent."
-          : "Executed from the AgentKit wallet on Robinhood Chain (scaled down to the demo budget)."}
+          ? "Simulated: priced with a live on-chain Uniswap quote on Robinhood Chain (or Robinhood's token price where no pool exists). No transaction sent. Create and fund your agent wallet to buy for real."
+          : run.source === "pocket"
+            ? "Bought from your own agent wallet on Robinhood Chain, capped by your rules and your balance."
+            : "Executed from Stockback's demo agent wallet on Robinhood Chain (scaled down to the demo budget)."}
       </p>
     </div>
   );
@@ -1223,6 +1441,14 @@ function ArrowIcon({ small }: { small?: boolean }) {
   return (
     <svg width={z} height={z} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+function ExternalIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 16L16 8M9.5 8H16v6.5" />
     </svg>
   );
 }

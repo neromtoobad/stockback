@@ -28,8 +28,10 @@ export async function GET() {
       })
       .sort((x, y) => y.value - x.value);
     const slim = (list: typeof runs) =>
-      list.map((r) => ({ id: r.id, created_at: r.created_at, merchant: r.merchant, spend_usd: r.spend_usd, total_usd: r.total_usd, mode: r.mode, fills: r.fills, flagged: r.flagged }));
-    return NextResponse.json({ holdings, runs: slim(runs), live: slim(live), stats: totals });
+      list.map((r) => ({ id: r.id, created_at: r.created_at, merchant: r.merchant, spend_usd: r.spend_usd, total_usd: r.total_usd, mode: r.mode, fills: r.fills, flagged: r.flagged, pocketOwned: r.source === "pocket" && r.pocket !== pocket }));
+    // The public live feed shows other people's buys, so drop what they bought from where.
+    const publicLive = slim(live).map((r) => (r.pocketOwned ? { ...r, merchant: "a receipt", flagged: "" } : r));
+    return NextResponse.json({ holdings, runs: slim(runs), live: publicLive, stats: totals });
   } catch (err) {
     return fail(err);
   }

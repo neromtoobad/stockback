@@ -31,24 +31,36 @@ Object.defineProperty(QuietViemWalletProvider.prototype, "trackInitialization", 
 
 let _provider: QuietViemWalletProvider | undefined;
 let _agentKit: Promise<AgentKit> | undefined;
+const _providers = new Map<string, QuietViemWalletProvider>();
 
-/** The agent wallet as an AgentKit EVM wallet provider (singleton; one nonce stream per process). */
-export function getAgentWalletProvider(): ViemWalletProvider {
-  if (_provider) return _provider;
-  const pk = process.env.AGENT_PRIVATE_KEY;
-  if (!pk || !/^(0x)?[0-9a-fA-F]{64}$/.test(pk)) throw new Error("AGENT_PRIVATE_KEY is not set");
-  const account = privateKeyToAccount((pk.startsWith("0x") ? pk : `0x${pk}`) as Hex, { nonceManager });
-  const expected = process.env.AGENT_ADDRESS;
-  if (expected && expected.toLowerCase() !== account.address.toLowerCase()) {
-    throw new Error("AGENT_PRIVATE_KEY does not match AGENT_ADDRESS");
-  }
+/** An AgentKit EVM wallet provider for any private key (cached per address; one nonce stream per process). */
+export function walletProviderFor(privateKey: string): ViemWalletProvider {
+  if (!/^(0x)?[0-9a-fA-F]{64}$/.test(privateKey)) throw new Error("invalid private key");
+  const account = privateKeyToAccount((privateKey.startsWith("0x") ? privateKey : `0x${privateKey}`) as Hex, { nonceManager });
+  const cached = _providers.get(account.address);
+  if (cached) return cached;
   const walletClient = createWalletClient({ account, chain: robinhoodChain, transport: http(RH_RPC_URL, { timeout: 20_000, retryCount: 2 }) });
   // AgentKit pins its own viem (2.38.x); the client is runtime-compatible, only the type declarations differ.
-  _provider = new QuietViemWalletProvider(walletClient as unknown as ConstructorParameters<typeof ViemWalletProvider>[0], {
+  const provider = new QuietViemWalletProvider(walletClient as unknown as ConstructorParameters<typeof ViemWalletProvider>[0], {
     rpcUrl: RH_RPC_URL,
     gasLimitMultiplier: 1.3, // on top of eth_estimateGas (which already includes Arbitrum L1 data gas)
     feePerGasMultiplier: 1.1,
   });
+  _providers.set(account.address, provider);
+  return provider;
+}
+
+/** The house agent wallet (owner demo mode) as an AgentKit EVM wallet provider. */
+export function getAgentWalletProvider(): ViemWalletProvider {
+  if (_provider) return _provider;
+  const pk = process.env.AGENT_PRIVATE_KEY;
+  if (!pk) throw new Error("AGENT_PRIVATE_KEY is not set");
+  const provider = walletProviderFor(pk) as QuietViemWalletProvider;
+  const expected = process.env.AGENT_ADDRESS;
+  if (expected && expected.toLowerCase() !== provider.getAddress().toLowerCase()) {
+    throw new Error("AGENT_PRIVATE_KEY does not match AGENT_ADDRESS");
+  }
+  _provider = provider;
   return _provider;
 }
 
