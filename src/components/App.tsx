@@ -379,11 +379,21 @@ export function Frame({ children }: { children: React.ReactNode }) {
 
 function TopBar() {
   const [tape, setTape] = useState<{ symbol: string; price: number }[]>([]);
+  // The pill shows *your* agent wallet (or invites you to create one), never the demo wallet.
+  const [mine, setMine] = useState<{ address: string; live: boolean } | null | undefined>(undefined);
   useEffect(() => {
     fetch("/api/tape")
       .then((r) => (r.ok ? r.json() : []))
       .then(setTape)
       .catch(() => {});
+    const load = () =>
+      fetch("/api/me/wallet", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : { wallet: null }))
+        .then((j) => setMine(j.wallet ? { address: j.wallet.address, live: j.wallet.live } : null))
+        .catch(() => setMine(null));
+    load();
+    const id = setInterval(load, 15_000);
+    return () => clearInterval(id);
   }, []);
   const items = tape.length ? [...tape, ...tape] : [];
   return (
@@ -414,15 +424,22 @@ function TopBar() {
         <Link href="/#how" className="hidden text-white/80 hover:text-white sm:inline">
           How it works
         </Link>
-        <a
-          href={`${EXPLORER}/address/${AGENT_ADDRESS}`}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 rounded-full bg-white/10 py-1 pr-3 pl-1 hover:bg-white/15"
-        >
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-mint font-mono text-[10px] font-bold text-ink">AK</span>
-          <span className="font-mono text-xs">{AGENT_ADDRESS ? `${AGENT_ADDRESS.slice(0, 6)}…${AGENT_ADDRESS.slice(-4)}` : "agent"}</span>
-        </a>
+        {mine ? (
+          <Link href="/#my-wallet" title="Your agent wallet" className="flex items-center gap-2 rounded-full bg-white/10 py-1 pr-3 pl-1 hover:bg-white/15">
+            <span className={`flex h-7 w-7 items-center justify-center rounded-full font-mono text-[10px] font-bold text-ink ${mine.live ? "bg-mint" : "bg-white/70"}`}>
+              {mine.live ? "●" : "○"}
+            </span>
+            <span className="font-mono text-xs">
+              {mine.address.slice(0, 6)}…{mine.address.slice(-4)}
+            </span>
+          </Link>
+        ) : mine === null ? (
+          <Link href="/#my-wallet" className="flex items-center gap-2 rounded-full bg-mint px-3.5 py-1.5 text-sm font-semibold text-ink hover:opacity-90">
+            Create wallet
+          </Link>
+        ) : (
+          <span className="h-9 w-32 rounded-full bg-white/10" />
+        )}
       </nav>
     </header>
   );
@@ -548,7 +565,7 @@ function WalletCard({ pocket }: { pocket: PocketData | null }) {
     <section id="wallet" className="scroll-mt-6 rounded-[20px] bg-ink p-5 text-white">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-[11px] text-white/50">Every live buy · Coinbase AgentKit wallets</p>
+          <p className="text-[11px] text-white/50">Every live buy · Stockback&apos;s demo wallet + user wallets</p>
           <h3 className="mt-1 text-[24px] leading-tight font-bold tracking-[-0.02em]">
             Live on <br className="xl:hidden" />
             <span className="accent-serif text-[1.12em] text-mint">Robinhood Chain</span>
@@ -556,7 +573,7 @@ function WalletCard({ pocket }: { pocket: PocketData | null }) {
         </div>
         {address && (
           <a href={`${EXPLORER}/address/${address}`} target="_blank" rel="noreferrer" className="shrink-0 rounded-full bg-white/10 px-3 py-1.5 font-mono text-[11px] hover:bg-white/15">
-            {address.slice(0, 6)}…{address.slice(-4)} ↗
+            demo wallet {address.slice(0, 6)}…{address.slice(-4)} ↗
           </a>
         )}
       </div>
